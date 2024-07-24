@@ -28,10 +28,10 @@ const actividades = [
   { id: 'quiz', nombre: "Quiz interactivo", componente: QuizInteractivo, descripcion: "Pon a prueba tus conocimientos", color: "from-blue-400 to-blue-600", imagen: "/images/actividad1.webp" },
   { id: 'flashcards', nombre: "Flashcards", componente: Flashcards, descripcion: "Repasa conceptos clave", color: "from-green-400 to-green-600", imagen: "/images/actividad2.webp" },
   { id: 'asociacion', nombre: "Asociación de conceptos", componente: JuegoAsociacion, descripcion: "Conecta conceptos relacionados", color: "from-yellow-400 to-yellow-600", imagen: "/images/actividad3.webp" },
-  { id: 'cascada', nombre: "Cascada de preguntas", componente: PreguntasCascada, descripcion: "Avanza por el torrente y gana", color: "from-red-400 to-red-600", imagen: "/images/actividad5.webp" },
-  { id: 'sopaletras', nombre: "Sopa de letras", componente: SopaLetras, descripcion: "Encuentra palabras ocultas", color: "from-indigo-400 to-indigo-600", imagen: "/images/actividad6.webp" },
-  { id: 'ahorcado', nombre: "Ahorcado", componente: Ahorcado, descripcion: "Adivina la palabra oculta", color: "from-pink-400 to-pink-600", imagen: "/images/actividad7.webp" },
-  { id: 'completarFrase', nombre: "Completar la frase", componente: CompletarFrase, descripcion: "Completa las frases con la palabra correcta", color: "from-teal-400 to-teal-600", imagen: "/images/actividad8.webp" },
+  { id: 'cascada', nombre: "Cascada de preguntas", componente: PreguntasCascada, descripcion: "Avanza por el torrente y gana", color: "from-red-400 to-red-600", imagen: "/images/actividad4.webp" },
+  { id: 'sopaletras', nombre: "Sopa de letras", componente: SopaLetras, descripcion: "Encuentra palabras ocultas", color: "from-indigo-400 to-indigo-600", imagen: "/images/actividad5.webp" },
+  { id: 'ahorcado', nombre: "Ahorcado", componente: Ahorcado, descripcion: "Adivina la palabra oculta", color: "from-pink-400 to-pink-600", imagen: "/images/actividad6.webp" },
+  { id: 'completarFrase', nombre: "Completar la frase", componente: CompletarFrase, descripcion: "Completa las frases con la palabra correcta", color: "from-teal-400 to-teal-600", imagen: "/images/actividad7.webp" },
 ];
 
 const App = () => {
@@ -138,7 +138,8 @@ const App = () => {
 
     return (
       <>
-        <h1 className="text-5xl font-bold mb-10 text-center text-sociologia-800">Bienvenido al Repaso de Sociología</h1>
+        <h1 className="text-5xl font-bold mb-10 text-center text-sociologia-800">Curso de Sociología, UNAV</h1>
+        <h1 className="text-3xl font-bold mb-10 text-center text-sociologia-800">Prof. Alejandro Néstor García Martínez</h1>
         <p className="mb-12 text-2xl text-center text-sociologia-600">Explora los temas de la asignatura y desafía tu conocimiento de una manera entretenida:</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {temas.map((tema, index) => (
@@ -157,6 +158,14 @@ const App = () => {
   return (
     <div className="container mx-auto p-8 bg-gradient-to-b from-sociologia-100 to-sociologia-200 min-h-screen">
       <Breadcrumbs items={getBreadcrumbs()} onNavigate={handleBreadcrumbNavigation} />
+      {!temaSeleccionado && !actividadSeleccionada && (
+        <div className="relative mb-8">
+          <img src="/images/portada.webp" alt="Portada del Curso" className="w-full h-64 object-cover rounded-lg shadow-lg" />
+          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
+            <h1 className="text-4xl font-bold text-white text-center">Bienvenido a los recursos de aprendizaje para:</h1>
+          </div>
+        </div>
+      )}
       <div className="mt-8">
         {renderContent()}
       </div>
