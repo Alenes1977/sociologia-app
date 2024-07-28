@@ -9,10 +9,11 @@ import SopaLetras from './components/SopaLetras';
 import PreguntasCascada from './components/PreguntasCascada';
 import Ahorcado from './components/Ahorcado';
 import CompletarFrase from './components/CompletarFrase';
+import TestCertificacion from './components/TestCertificacion';
 import Breadcrumbs from './components/Breadcrumbs';
 import { temasData } from './dataTemas';
 import TemaCard from './components/TemaCard';
-import { Brain, MessageCircleQuestion, Link, WholeWord, FlipVertical, GitBranch, TextSearch } from 'lucide-react';
+import { GraduationCap, Brain, MessageCircleQuestion, Link, WholeWord, FlipVertical, GitBranch, TextSearch } from 'lucide-react';
 
 const actividadesIconos = {
   quiz: Brain,
@@ -21,7 +22,8 @@ const actividadesIconos = {
   cascada: MessageCircleQuestion,
   sopaletras: WholeWord,
   ahorcado: GitBranch,
-  completarFrase: TextSearch
+  completarFrase: TextSearch,
+  testCertificacion: GraduationCap,
 };
 
 const actividades = [
@@ -32,6 +34,7 @@ const actividades = [
   { id: 'sopaletras', nombre: "Sopa de letras", componente: SopaLetras, descripcion: "Encuentra palabras ocultas", color: "from-indigo-400 to-indigo-600", imagen: "/images/actividad5.webp" },
   { id: 'ahorcado', nombre: "Ahorcado", componente: Ahorcado, descripcion: "Adivina la palabra oculta", color: "from-pink-400 to-pink-600", imagen: "/images/actividad6.webp" },
   { id: 'completarFrase', nombre: "Completar la frase", componente: CompletarFrase, descripcion: "Completa las frases con la palabra correcta", color: "from-teal-400 to-teal-600", imagen: "/images/actividad7.webp" },
+  { id: 'testCertificacion', nombre: "Test para Certificación", componente: TestCertificacion, descripcion: "Realiza un test para obtener tu certificado de este tema del curso", color: "from-purple-400 to-purple-600", imagen: "/images/certificado.webp" },
 ];
 
 const App = () => {
@@ -160,7 +163,7 @@ const App = () => {
       <Breadcrumbs items={getBreadcrumbs()} onNavigate={handleBreadcrumbNavigation} />
       {!temaSeleccionado && !actividadSeleccionada && (
         <div className="relative mb-8">
-          <img src="/images/portada.webp" alt="Portada del Curso" className="w-full h-64 object-cover rounded-lg shadow-lg" />
+          <img src="/images/portada.webp" alt="Portada del Curso" className="w-full h-64 object-cover rounded-lg shadow-lg" style={{ objectPosition: 'center 20%' }} /> {/* Ajustar el valor para mover la imagen hacia abajo */}
           <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
             <h1 className="text-4xl font-bold text-white text-center">Bienvenido a los recursos de aprendizaje para:</h1>
           </div>
@@ -172,5 +175,6 @@ const App = () => {
     </div>
   );
 };
+
 
 export default App;
