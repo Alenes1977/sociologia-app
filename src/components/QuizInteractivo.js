@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { temasData } from '../dataTemas';
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
@@ -40,7 +40,7 @@ const QuizInteractivo = ({ temaId, onVolver }) => {
     return () => window.removeEventListener('resize', manejarRedimensionVentana);
   }, []);
 
-  const initializeQuiz = () => {
+  const initializeQuiz = useCallback(() => {
     const selectedQuestions = shuffleArray([...allQuestions]).slice(0, numPreguntas);
     const shuffledQuestionsWithShuffledOptions = selectedQuestions.map((question) => {
       const opciones = shuffleArray([...question.opciones]);
@@ -52,13 +52,13 @@ const QuizInteractivo = ({ temaId, onVolver }) => {
       };
     });
     setShuffledQuestions(shuffledQuestionsWithShuffledOptions);
-  };
+  }, [allQuestions, numPreguntas]);
 
   useEffect(() => {
     if (!mostrarInstrucciones) {
       initializeQuiz();
     }
-  }, [temaId, numPreguntas, mostrarInstrucciones]);
+  }, [temaId, numPreguntas, mostrarInstrucciones, initializeQuiz]);
 
   const handleAnswerOptionClick = (selectedIndex) => {
     setUserAnswers([...userAnswers, selectedIndex]);
@@ -101,18 +101,19 @@ const QuizInteractivo = ({ temaId, onVolver }) => {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="mb-2">{question.pregunta}</p>
-          {question.opciones.map((opcion, opIndex) => (
-            <div key={opIndex} className="w-full mb-2">
+          <p className="mb-4 text-sm sm:text-base">{question.pregunta}</p>
+          <div className="space-y-3">
+            {question.opciones.map((opcion, opIndex) => (
               <Button
+                key={opIndex}
                 variant="default"
-                className="w-full text-left justify-start py-3 px-4 transition-all duration-200 hover:bg-sociologia-500 focus:bg-sociologia-600 text-white transform hover:scale-105"
+                className="w-full min-h-[60px] h-auto text-left justify-start py-3 px-4 transition-all duration-200 hover:bg-sociologia-500 focus:bg-sociologia-600 text-white transform hover:scale-105 text-xs sm:text-sm"
                 onClick={() => handleAnswerOptionClick(opIndex)}
               >
-                {opcion}
+                <span className="block whitespace-normal">{opcion}</span>
               </Button>
-            </div>
-          ))}
+            ))}
+          </div>
         </CardContent>
       </Card>
     </motion.div>
@@ -267,11 +268,11 @@ const QuizInteractivo = ({ temaId, onVolver }) => {
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
-        <CardTitle>Quiz: {temaData.titulo}</CardTitle>
+        <CardTitle className="text-lg sm:text-xl md:text-2xl">Quiz: {temaData.titulo}</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="mb-4 flex justify-between items-center">
-          <span className="text-sm font-semibold">
+          <span className="text-xs sm:text-sm font-semibold">
             Progreso: pregunta {currentQuestion + 1} / {shuffledQuestions.length}
           </span>
         </div>

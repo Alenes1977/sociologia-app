@@ -13,6 +13,7 @@ const TestCertificacion = ({ temaId, onVolver }) => {
   const [testCompletado, setTestCompletado] = useState(false);
   const [puntuacion, setPuntuacion] = useState(0);
   const [nombre, setNombre] = useState('');
+  const [apellidos, setApellidos] = useState('');
   const [email, setEmail] = useState('');
   const [enviando, setEnviando] = useState(false);
   const [error, setError] = useState('');
@@ -29,7 +30,7 @@ const TestCertificacion = ({ temaId, onVolver }) => {
       if (temaData && temaData.preguntasQuiz) {
         const preguntasAleatorias = temaData.preguntasQuiz
           .sort(() => 0.5 - Math.random())
-          .slice(0, 30) // Cambiado a 30 preguntas
+          .slice(0, 1)
           .map(pregunta => {
             const opcionesAleatorias = pregunta.opciones
               .map((texto, index) => ({
@@ -63,9 +64,6 @@ const TestCertificacion = ({ temaId, onVolver }) => {
     };
     setRespuestas(nuevasRespuestas);
 
-    console.log(`Pregunta actual: ${preguntaActual}`);
-    console.log(`Respuesta seleccionada: ${respuestaIndex}`);
-
     if (preguntaActual < preguntas.length - 1) {
       setPreguntaActual(prevPregunta => prevPregunta + 1);
     } else {
@@ -78,15 +76,9 @@ const TestCertificacion = ({ temaId, onVolver }) => {
       const respuestaUsuario = respuestasFinales[index];
       const opcionUsuario = pregunta.opciones[respuestaUsuario];
       const esCorrecta = opcionUsuario && opcionUsuario.esCorrecta;
-
-      console.log(`Pregunta ${index + 1}: ${pregunta.pregunta}`);
-      console.log(`Respuesta del usuario: ${opcionUsuario ? opcionUsuario.texto : 'No respondida'}`);
-      console.log(`Es correcta: ${esCorrecta ? 'Sí' : 'No'}`);
-
       return total + (esCorrecta ? 1 : 0);
     }, 0);
 
-    console.log('Total de aciertos:', aciertos);
     setPuntuacion(aciertos);
     setTestCompletado(true);
     setMostrarRevision(true);
@@ -96,13 +88,9 @@ const TestCertificacion = ({ temaId, onVolver }) => {
     }
   };
 
-  useEffect(() => {
-    console.log('Estado de respuestas:', respuestas);
-  }, [respuestas]);
-
   const enviarResultados = async () => {
-    if (!nombre || !email) {
-      setError('Por favor, introduce tu nombre y email.');
+    if (!nombre || !apellidos || !email) {
+      setError('Por favor, introduce tu nombre, apellidos y email.');
       return;
     }
 
@@ -133,6 +121,7 @@ const TestCertificacion = ({ temaId, onVolver }) => {
         },
         body: JSON.stringify({
           nombre,
+          apellidos,
           email,
           tema: temaCompleto,
           puntuacion,
@@ -157,16 +146,16 @@ const TestCertificacion = ({ temaId, onVolver }) => {
   const renderPantallaConfirmacion = () => (
     <Card>
       <CardHeader>
-        <CardTitle className="flex items-center text-2xl font-bold text-green-600">
+        <CardTitle className="flex items-center text-xl sm:text-2xl font-bold text-green-600">
           <CheckCircle className="mr-2" />
           Certificación Enviada
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-lg mb-4">
+        <p className="text-base sm:text-lg mb-4">
           ¡Enhorabuena! Tu información ha sido enviada con éxito.
         </p>
-        <p className="text-lg mb-6">
+        <p className="text-base sm:text-lg mb-6">
           Recibirás tu certificado autenticado en el correo electrónico: <strong>{email}</strong>
         </p>
         <Button onClick={onVolver} className="w-full bg-sociologia-600 hover:bg-sociologia-700 text-white">
@@ -179,13 +168,13 @@ const TestCertificacion = ({ temaId, onVolver }) => {
   const renderInstrucciones = () => (
     <Card className="mb-4">
       <CardHeader>
-        <CardTitle className="flex items-center text-2xl font-bold text-sociologia-700">
+        <CardTitle className="flex items-center text-xl sm:text-2xl font-bold text-sociologia-700">
           <HelpCircle className="mr-2" />
           Instrucciones del Test para Certificación
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <ol className="list-decimal list-inside space-y-2 text-sociologia-600">
+        <ol className="list-decimal list-inside space-y-2 text-sm sm:text-base text-sociologia-600">
           <li>Este test consta de 30 preguntas para comprobar tu aprendizaje.</li>
           <li>Necesitas obtener al menos un 80% de aciertos para obtener el certificado.</li>
           <li>Si apruebas, podrás solicitar que se te envíe un certificado por correo electrónico.</li>
@@ -194,7 +183,7 @@ const TestCertificacion = ({ temaId, onVolver }) => {
         </ol>
         <Button 
           onClick={() => setMostrarInstrucciones(false)} 
-          className="mt-6 bg-sociologia-600 hover:bg-sociologia-700 text-white"
+          className="mt-6 w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white"
         >
           Comenzar el test
         </Button>
@@ -205,33 +194,33 @@ const TestCertificacion = ({ temaId, onVolver }) => {
   const renderRevision = () => (
     <Card>
       <CardHeader>
-        <CardTitle>Revisión de Respuestas</CardTitle>
+        <CardTitle className="text-xl sm:text-2xl">Revisión de Respuestas</CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="mb-4">Has acertado {puntuacion} de {preguntas.length} preguntas.</p>
+        <p className="mb-4 text-base sm:text-lg">Has acertado {puntuacion} de {preguntas.length} preguntas.</p>
         {preguntas.map((pregunta, index) => {
           const respuestaUsuario = respuestas[index];
           const opcionUsuario = pregunta.opciones[respuestaUsuario];
           const esCorrecta = opcionUsuario && opcionUsuario.esCorrecta;
           return (
             <div key={index} className="mb-4 p-4 border rounded">
-              <p className="font-bold">{pregunta.pregunta}</p>
-              <p className={esCorrecta ? "text-green-600" : "text-red-600"}>
+              <p className="font-bold text-sm sm:text-base">{pregunta.pregunta}</p>
+              <p className={`text-sm sm:text-base ${esCorrecta ? "text-green-600" : "text-red-600"}`}>
                 Tu respuesta: {opcionUsuario ? opcionUsuario.texto : 'No respondida'}
               </p>
               {!esCorrecta && (
-                <p className="text-green-600">
+                <p className="text-sm sm:text-base text-green-600">
                   Respuesta correcta: {pregunta.opciones.find(opcion => opcion.esCorrecta).texto}
                 </p>
               )}
             </div>
           );
         })}
-        <div className="flex justify-between mt-6">
-          <Button onClick={() => setMostrarRevision(false)} className="bg-sociologia-600 hover:bg-sociologia-700 text-white">
+        <div className="flex flex-col sm:flex-row justify-between mt-6 space-y-2 sm:space-y-0">
+          <Button onClick={() => setMostrarRevision(false)} className="w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white">
             Continuar
           </Button>
-          <Button onClick={onVolver} className="bg-gray-400 hover:bg-gray-500 text-white">
+          <Button onClick={onVolver} className="w-full sm:w-auto bg-gray-400 hover:bg-gray-500 text-white">
             Volver a las actividades
           </Button>
         </div>
@@ -276,21 +265,28 @@ const TestCertificacion = ({ temaId, onVolver }) => {
       <Card>
         {mostrarConfeti && <Confetti recycle={false} numberOfPieces={200} />}
         <CardHeader>
-          <CardTitle>Resultados del Test</CardTitle>
+          <CardTitle className="text-xl sm:text-2xl">Resultados del Test</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="text-center mb-6">
-            <p className="text-3xl font-bold mb-2">Porcentaje de aciertos: {porcentajeAciertos.toFixed(2)}%</p>
-            <p className="text-xl">Has acertado {puntuacion} de {preguntas.length} preguntas.</p>
+            <p className="text-2xl sm:text-3xl font-bold mb-2">Porcentaje de aciertos: {porcentajeAciertos.toFixed(2)}%</p>
+            <p className="text-lg sm:text-xl">Has acertado {puntuacion} de {preguntas.length} preguntas.</p>
           </div>
           {aprobado ? (
             <>
-              <p className="text-2xl text-green-600 mb-4">¡Felicidades! Has aprobado el test y puedes obtener tu certificado.</p>
+              <p className="text-xl sm:text-2xl text-green-600 mb-4">¡Felicidades! Has aprobado el test y puedes obtener tu certificado.</p>
               <Input
                 type="text"
-                placeholder="Nombre y apellidos completos"
+                placeholder="Nombre"
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
+                className="mb-2"
+              />
+              <Input
+                type="text"
+                placeholder="Apellidos"
+                value={apellidos}
+                onChange={(e) => setApellidos(e.target.value)}
                 className="mb-2"
               />
               <Input
@@ -301,20 +297,20 @@ const TestCertificacion = ({ temaId, onVolver }) => {
                 className="mb-4"
               />
               {error && <p className="text-red-500 mb-4">{error}</p>}
-              <div className="flex justify-between">
-                <Button onClick={enviarResultados} disabled={enviando} className="bg-sociologia-600 hover:bg-sociologia-700 text-white">
+              <div className="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0">
+                <Button onClick={enviarResultados} disabled={enviando} className="w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white">
                   {enviando ? 'Enviando...' : 'Certificar resultados'}
                 </Button>
-                <Button onClick={onVolver} className="bg-gray-400 hover:bg-gray-500 text-white">
+                <Button onClick={onVolver} className="w-full sm:w-auto bg-gray-400 hover:bg-gray-500 text-white">
                   Volver
                 </Button>
               </div>
             </>
           ) : (
             <>
-              <p className="text-2xl text-red-600 mb-4">Lo siento, no has alcanzado el porcentaje necesario para obtener el certificado.</p>
-              <p className="text-xl mb-4">Necesitas un <span className="font-bold">80%</span> de aciertos para aprobar.</p>
-              <Button onClick={onVolver} className="bg-sociologia-600 hover:bg-sociologia-700 text-white">
+              <p className="text-xl sm:text-2xl text-red-600 mb-4">Lo siento, no has alcanzado el porcentaje necesario para obtener el certificado.</p>
+              <p className="text-lg sm:text-xl mb-4">Necesitas un <span className="font-bold">80%</span> de aciertos para aprobar.</p>
+              <Button onClick={onVolver} className="w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white">
                 Volver a las actividades
               </Button>
             </>
@@ -325,7 +321,7 @@ const TestCertificacion = ({ temaId, onVolver }) => {
   }
 
   if (preguntas.length === 0) {
-    return <div>No hay preguntas disponibles.</div>;
+    return <div className="text-center text-sociologia-600">No hay preguntas disponibles.</div>;
   }
 
   const preguntaActualData = preguntas[preguntaActual];
@@ -333,15 +329,15 @@ const TestCertificacion = ({ temaId, onVolver }) => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Test de Certificación - Pregunta {preguntaActual + 1} de {preguntas.length}</CardTitle>
+        <CardTitle className="text-lg sm:text-xl">Test de Certificación - Pregunta {preguntaActual + 1} de {preguntas.length}</CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="mb-4">{preguntaActualData.pregunta}</p>
+        <p className="mb-4 text-base sm:text-lg">{preguntaActualData.pregunta}</p>
         {preguntaActualData.opciones.map((opcion, index) => (
           <Button
             key={index}
             onClick={() => handleRespuesta(index)}
-            className="block w-full mb-2 bg-sociologia-500 hover:bg-sociologia-600 text-white"
+            className="block w-full mb-2 bg-sociologia-500 hover:bg-sociologia-600 text-white text-left px-4 py-2 text-sm sm:text-base"
           >
             {opcion.texto}
           </Button>

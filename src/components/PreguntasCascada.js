@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
-import { CheckCircle, XCircle, Clock, HelpCircle } from 'lucide-react';
+import { Clock, HelpCircle } from 'lucide-react';
 import { temasData } from '../dataTemas';
 import Confetti from 'react-confetti';
 
@@ -118,34 +118,33 @@ const PreguntasCascada = ({ temaId, onVolver }) => {
   if (!juegoIniciado) {
     return (
       <Card className="mb-4 w-full max-w-2xl mx-auto">
-      <CardHeader>
-        <CardTitle className="flex items-center text-2xl font-bold text-sociologia-700">
-          <HelpCircle className="mr-2" />
-          Instrucciones de la actividad
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="mb-6">
-
-          <ol className="list-decimal list-inside space-y-2 text-sociologia-600">
-            <li>Se te presentarán 10 preguntas de dificultad creciente.</li>
-            <li>Tienes 15 segundos para responder cada pregunta.</li>
-            <li>Si respondes correctamente, pasarás a la siguiente pregunta.</li>
-            <li>Si respondes incorrectamente o se agota el tiempo, el juego terminará.</li>
-            <li>Tu objetivo es responder correctamente el mayor número de preguntas posible.</li>
-            <li>¡Si respondes correctamente todas las preguntas, habrá una sorpresa especial!</li>
-          </ol>
-        </div>
-        <div className="mt-6 flex justify-end">
-          <Button 
-            onClick={iniciarJuego} 
-            className="bg-sociologia-600 hover:bg-sociologia-700 text-white px-6 py-2 text-lg"
-          >
-            Comenzar actividad
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
+        <CardHeader>
+          <CardTitle className="flex items-center text-xl sm:text-2xl font-bold text-sociologia-700">
+            <HelpCircle className="mr-2" />
+            Instrucciones de la actividad
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="mb-4 sm:mb-6">
+            <ol className="list-decimal list-inside space-y-1 sm:space-y-2 text-sm sm:text-base text-sociologia-600">
+              <li>Se te presentarán 10 preguntas de dificultad creciente.</li>
+              <li>Tienes 15 segundos para responder cada pregunta.</li>
+              <li>Si respondes correctamente, pasarás a la siguiente pregunta.</li>
+              <li>Si respondes incorrectamente o se agota el tiempo, el juego terminará.</li>
+              <li>Tu objetivo es responder correctamente el mayor número de preguntas posible.</li>
+              <li>¡Si respondes correctamente todas las preguntas, habrá una sorpresa especial!</li>
+            </ol>
+          </div>
+          <div className="mt-4 sm:mt-6 flex justify-end">
+            <Button 
+              onClick={iniciarJuego} 
+              className="bg-sociologia-600 hover:bg-sociologia-700 text-white px-4 sm:px-6 py-2 text-sm sm:text-lg w-full sm:w-auto"
+            >
+              Comenzar actividad
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
     );
   }
 
@@ -162,28 +161,28 @@ const PreguntasCascada = ({ temaId, onVolver }) => {
         )}
         <Card className="w-full max-w-4xl mx-auto">
           <CardHeader>
-            <CardTitle className="text-2xl font-bold text-sociologia-700">
+            <CardTitle className="text-xl sm:text-2xl font-bold text-sociologia-700">
               {puntuacion === preguntas.length ? "¡Felicidades! ¡Has ganado!" : "Juego terminado"}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-xl mb-4">Tu puntuación final es: {puntuacion} de {preguntas.length}</p>
-            <div className="space-y-4">
+            <p className="text-lg sm:text-xl mb-4">Tu puntuación final es: {puntuacion} de {preguntas.length}</p>
+            <div className="space-y-3 sm:space-y-4">
               {respuestasUsuario.map((respuesta, index) => (
                 <div key={index} className="border-b pb-2">
-                  <p className="font-semibold">{index + 1}. {respuesta.pregunta.pregunta}</p>
-                  <p className={respuesta.esCorrecta ? "text-green-600" : "text-red-600"}>
+                  <p className="font-semibold text-sm sm:text-base">{index + 1}. {respuesta.pregunta.pregunta}</p>
+                  <p className={`text-sm sm:text-base ${respuesta.esCorrecta ? "text-green-600" : "text-red-600"}`}>
                     Tu respuesta: {respuesta.respuestaUsuario === "Se agotó el tiempo" ? "[Se agotó el tiempo]" : respuesta.respuestaUsuario}
                   </p>
                   {!respuesta.esCorrecta && (
-                    <p className="text-green-600">Respuesta correcta: {respuesta.pregunta.respuestaCorrecta}</p>
+                    <p className="text-sm sm:text-base text-green-600">Respuesta correcta: {respuesta.pregunta.respuestaCorrecta}</p>
                   )}
                 </div>
               ))}
             </div>
-            <div className="mt-6 space-x-2">
-              <Button onClick={reiniciarJuego} className="bg-sociologia-600 hover:bg-sociologia-700 text-white">Jugar de nuevo</Button>
-              <Button onClick={onVolver} className="bg-sociologia-600 hover:bg-sociologia-700 text-white">Volver a las actividades</Button>
+            <div className="mt-4 sm:mt-6 space-y-2 sm:space-y-0 sm:space-x-2 flex flex-col sm:flex-row justify-center">
+              <Button onClick={reiniciarJuego} className="bg-sociologia-600 hover:bg-sociologia-700 text-white w-full sm:w-auto">Jugar de nuevo</Button>
+              <Button onClick={onVolver} className="bg-sociologia-600 hover:bg-sociologia-700 text-white w-full sm:w-auto">Volver a las actividades</Button>
             </div>
           </CardContent>
         </Card>
@@ -192,7 +191,7 @@ const PreguntasCascada = ({ temaId, onVolver }) => {
   }
 
   if (preguntas.length === 0) {
-    return <div>Cargando preguntas...</div>;
+    return <div className="text-center text-sociologia-600">Cargando preguntas...</div>;
   }
 
   const preguntaActual = preguntas[nivelActual];
@@ -200,7 +199,7 @@ const PreguntasCascada = ({ temaId, onVolver }) => {
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
-        <CardTitle className="text-2xl font-bold text-sociologia-700">Nivel {nivelActual + 1}</CardTitle>
+        <CardTitle className="text-xl sm:text-2xl font-bold text-sociologia-700">Nivel {nivelActual + 1}</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="mb-4 flex justify-between items-center">
@@ -215,7 +214,7 @@ const PreguntasCascada = ({ temaId, onVolver }) => {
             <span>{tiempoRestante}s</span>
           </div>
         </div>
-        <p className="text-lg mb-4">{preguntaActual.pregunta}</p>
+        <p className="text-base sm:text-lg mb-4 font-medium">{preguntaActual.pregunta}</p>
         <div className="grid grid-cols-1 gap-2">
           <AnimatePresence>
             {preguntaActual.opciones.map((opcion, index) => (
@@ -228,9 +227,9 @@ const PreguntasCascada = ({ temaId, onVolver }) => {
               >
                 <Button
                   onClick={() => manejarRespuesta(opcion)}
-                  className="w-full text-left justify-start py-3 px-4 transition-all duration-200 bg-sociologia-500 hover:bg-sociologia-600 text-white transform hover:scale-105"
+                  className="w-full min-h-[3rem] text-left justify-start py-2 px-3 transition-all duration-200 bg-sociologia-500 hover:bg-sociologia-600 text-white transform hover:scale-105"
                 >
-                  {opcion}
+                  <span className="inline-block whitespace-normal break-words text-xs sm:text-sm">{opcion}</span>
                 </Button>
               </motion.div>
             ))}

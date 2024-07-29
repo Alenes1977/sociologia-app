@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Slider } from "./ui/slider";
@@ -25,30 +24,7 @@ const CompletarFrase = ({ temaId, onVolver }) => {
   const [mostrarOpciones, setMostrarOpciones] = useState(false);
   const [respuestaUsuario, setRespuestaUsuario] = useState('');
 
-  useEffect(() => {
-    if (!mostrarInstrucciones) {
-      iniciarJuego();
-    }
-  }, [mostrarInstrucciones, temaId]);
-
-  useEffect(() => {
-    let temporizador;
-    if (!mostrarInstrucciones && !juegoTerminado && tiempoRestante > 0) {
-      temporizador = setInterval(() => {
-        setTiempoRestante((prevTiempo) => {
-          if (prevTiempo === 1) {
-            clearInterval(temporizador);
-            manejarRespuesta(null);
-            return 0;
-          }
-          return prevTiempo - 1;
-        });
-      }, 1000);
-    }
-    return () => clearInterval(temporizador);
-  }, [mostrarInstrucciones, juegoTerminado, tiempoRestante]);
-
-  const iniciarJuego = () => {
+  const iniciarJuego = useCallback(() => {
     const frasesDisponibles = temasData[temaId]?.completarFrase || [];
     const frasesSeleccionadas = frasesDisponibles.sort(() => 0.5 - Math.random()).slice(0, numFrases);
     setFrases(frasesSeleccionadas);
@@ -58,9 +34,17 @@ const CompletarFrase = ({ temaId, onVolver }) => {
     setJuegoTerminado(false);
     setMostrarOpciones(false);
     setRespuestaUsuario('');
-  };
+  }, [temaId, numFrases]);
 
-  const manejarRespuesta = (respuesta) => {
+  const finalizarJuego = useCallback((respuestasFinal) => {
+    setJuegoTerminado(true);
+    const aciertos = respuestasFinal.filter(r => r.correcta).length;
+    if (aciertos === frases.length) {
+      setMostrarConfeti(true);
+    }
+  }, [frases]);
+
+  const manejarRespuesta = useCallback((respuesta) => {
     const respuestaFinal = respuesta || respuestaUsuario;
     const nuevasRespuestas = [...respuestas, { 
       frase: frases[fraseActual].frase, 
@@ -77,15 +61,30 @@ const CompletarFrase = ({ temaId, onVolver }) => {
     } else {
       finalizarJuego(nuevasRespuestas);
     }
-  };
+  }, [fraseActual, frases, respuestaUsuario, respuestas, finalizarJuego]);
 
-  const finalizarJuego = (respuestasFinal) => {
-    setJuegoTerminado(true);
-    const aciertos = respuestasFinal.filter(r => r.correcta).length;
-    if (aciertos === frases.length) {
-      setMostrarConfeti(true);
+  useEffect(() => {
+    if (!mostrarInstrucciones) {
+      iniciarJuego();
     }
-  };
+  }, [mostrarInstrucciones, temaId, iniciarJuego]);
+
+  useEffect(() => {
+    let temporizador;
+    if (!mostrarInstrucciones && !juegoTerminado && tiempoRestante > 0) {
+      temporizador = setInterval(() => {
+        setTiempoRestante((prevTiempo) => {
+          if (prevTiempo === 1) {
+            clearInterval(temporizador);
+            manejarRespuesta(null);
+            return 0;
+          }
+          return prevTiempo - 1;
+        });
+      }, 1000);
+    }
+    return () => clearInterval(temporizador);
+  }, [mostrarInstrucciones, juegoTerminado, tiempoRestante, manejarRespuesta]);
 
   const mostrarPista = () => {
     if (!mostrarOpciones && tiempoRestante > TIEMPO_REDUCCION_PISTA) {
@@ -101,22 +100,22 @@ const CompletarFrase = ({ temaId, onVolver }) => {
     
     return (
       <div className="text-center mb-6">
-        <p className="text-xl mb-4">
+        <p className="text-base sm:text-xl mb-4">
           {partesFrase[0]}
           <span className="font-bold text-sociologia-600">_______</span>
           {partesFrase[1]}
         </p>
-        <div className="flex items-center justify-center mb-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center mb-4 space-y-2 sm:space-y-0 sm:space-x-2">
           <Input
             type="text"
             value={respuestaUsuario}
             onChange={(e) => setRespuestaUsuario(e.target.value)}
             placeholder="Escribe tu respuesta aquí"
-            className="mr-2 w-64"
+            className="w-full sm:w-64"
           />
           <Button
             onClick={() => manejarRespuesta(respuestaUsuario)}
-            className="bg-sociologia-500 hover:bg-sociologia-600 text-white"
+            className="w-full sm:w-auto bg-sociologia-500 hover:bg-sociologia-600 text-white"
           >
             <Send className="mr-2" />
             Enviar
@@ -125,7 +124,7 @@ const CompletarFrase = ({ temaId, onVolver }) => {
         {!mostrarOpciones && (
           <Button
             onClick={mostrarPista}
-            className="mt-2 bg-yellow-500 hover:bg-yellow-600 text-white"
+            className="mt-2 w-full sm:w-auto bg-yellow-500 hover:bg-yellow-600 text-white"
             disabled={tiempoRestante <= TIEMPO_REDUCCION_PISTA}
           >
             <Lightbulb className="mr-2" />
@@ -133,12 +132,12 @@ const CompletarFrase = ({ temaId, onVolver }) => {
           </Button>
         )}
         {mostrarOpciones && (
-          <div className="mt-4 grid grid-cols-2 gap-2">
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
             {fraseActualObj.opciones.map((opcion, index) => (
               <Button
                 key={index}
                 onClick={() => manejarRespuesta(opcion)}
-                className="bg-sociologia-500 hover:bg-sociologia-600 text-white"
+                className="w-full bg-sociologia-500 hover:bg-sociologia-600 text-white"
               >
                 {opcion}
               </Button>
@@ -207,31 +206,31 @@ const CompletarFrase = ({ temaId, onVolver }) => {
       <Card className="w-full max-w-4xl mx-auto">
         {mostrarConfeti && <Confetti recycle={false} numberOfPieces={200} />}
         <CardHeader>
-          <CardTitle className="text-2xl font-bold text-sociologia-700">
+          <CardTitle className="text-xl sm:text-2xl font-bold text-sociologia-700">
             Resumen del Juego
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-xl mb-4">
+          <p className="text-lg sm:text-xl mb-4">
             Has acertado {respuestas.filter(r => r.correcta).length} de {frases.length} frases.
           </p>
           <div className="space-y-4">
             {respuestas.map((respuesta, index) => (
               <div key={index} className={`p-4 rounded ${respuesta.correcta ? 'bg-green-100' : 'bg-red-100'}`}>
-                <p className="mb-2">
+                <p className="mb-2 text-sm sm:text-base">
                   {respuesta.frase.replace('[BLANK]', `[${respuesta.respuesta === null ? 'sin contestar' : respuesta.respuesta}]`)}
                 </p>
-                <p className={`font-semibold ${respuesta.correcta ? 'text-green-600' : 'text-red-600'}`}>
+                <p className={`font-semibold text-sm sm:text-base ${respuesta.correcta ? 'text-green-600' : 'text-red-600'}`}>
                   {respuesta.correcta ? 'Correcto' : `Incorrecto. La respuesta correcta era: ${frases[index].palabraCorrecta}`}
                 </p>
               </div>
             ))}
           </div>
-          <div className="mt-6 flex justify-between">
-            <Button onClick={iniciarJuego} className="bg-sociologia-600 hover:bg-sociologia-700 text-white">
+          <div className="mt-6 flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0">
+            <Button onClick={iniciarJuego} className="w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white">
               Jugar de nuevo
             </Button>
-            <Button onClick={onVolver} className="bg-gray-400 hover:bg-gray-500 text-white">
+            <Button onClick={onVolver} className="w-full sm:w-auto bg-gray-400 hover:bg-gray-500 text-white">
               Volver a las actividades
             </Button>
           </div>

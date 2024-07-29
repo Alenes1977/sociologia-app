@@ -147,80 +147,94 @@ const SopaLetras = ({ temaId, onVolver }) => {
   return (
     <Card className="w-full max-w-4xl mx-auto">
       <CardHeader>
-        <CardTitle className="text-2xl font-bold text-sociologia-700">
+        <CardTitle className="text-xl sm:text-2xl font-bold text-sociologia-700">
           Sopa de Letras: {temasData[temaId].titulo}
         </CardTitle>
       </CardHeader>
       <CardContent>
         {completado ? (
-          <div>
-            <h2 className="text-xl font-semibold mb-4">¡Felicidades! Has completado la Sopa de Letras</h2>
-            <Button onClick={() => {
-              setCompletado(false);
-              setEncontradas([]);
-              setGrid(generarSopaDeLetras(pistas));
-              setPistasVisibles({});
-              setCeldasEncontradas([]);
-            }} className="mr-2 bg-sociologia-600 hover:bg-sociologia-700 text-white">
-              Jugar de nuevo
-            </Button>
-            <Button onClick={onVolver} className="bg-sociologia-600 hover:bg-sociologia-700 text-white">
-              Volver a las actividades
-            </Button>
+          <div className="text-center">
+            <h2 className="text-lg sm:text-xl font-semibold mb-4">¡Felicidades! Has completado la Sopa de Letras</h2>
+            <div className="flex flex-col sm:flex-row justify-center gap-2">
+              <Button onClick={() => {
+                setCompletado(false);
+                setEncontradas([]);
+                setGrid(generarSopaDeLetras(pistas));
+                setPistasVisibles({});
+                setCeldasEncontradas([]);
+              }} className="bg-sociologia-600 hover:bg-sociologia-700 text-white w-full sm:w-auto">
+                Jugar de nuevo
+              </Button>
+              <Button onClick={onVolver} className="bg-sociologia-600 hover:bg-sociologia-700 text-white w-full sm:w-auto">
+                Volver a las actividades
+              </Button>
+            </div>
           </div>
         ) : (
           <>
             <div className="mb-4">
-              <h3 className="text-lg font-semibold">Palabras a encontrar:</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
+              <h3 className="text-base sm:text-lg font-semibold mb-2">Palabras a encontrar:</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2">
                 {pistas.map(({ pista, palabra }, index) => (
-                  <div key={index} className={`px-2 py-1 rounded ${
+                  <div key={index} className={`px-2 py-1 rounded text-xs sm:text-sm ${
                     encontradas.includes(palabra) ? 'bg-green-200 text-green-800' : 'bg-sociologia-100 text-sociologia-700'
                   }`}>
-                    {index + 1}. {pista} ({palabra.length} letras)
-                    {encontradas.includes(palabra) ? (
-                      <span className="ml-2 font-bold">{palabra}</span>
-                    ) : (
-                      <>
+                    <div className="flex items-center justify-between flex-wrap">
+                      <span>{index + 1}. {pista} ({palabra.length} letras)</span>
+                      {encontradas.includes(palabra) ? (
+                        <span className="ml-2 font-bold">{palabra}</span>
+                      ) : (
                         <Button 
                           onClick={() => mostrarPista(index)} 
                           className="ml-2 px-2 py-1 text-xs bg-sociologia-500 hover:bg-sociologia-600 text-white"
                         >
                           Pista
                         </Button>
-                        {pistasVisibles[index] && (
-                          <span className="ml-2">{formatearPista(palabra)}</span>
-                        )}
-                      </>
+                      )}
+                    </div>
+                    {pistasVisibles[index] && !encontradas.includes(palabra) && (
+                      <div className="mt-1 text-xs">{formatearPista(palabra)}</div>
                     )}
                   </div>
                 ))}
               </div>
             </div>
             <div 
-              className="grid grid-cols-15 gap-1 w-full max-w-[600px] mx-auto"
+              className="grid grid-cols-15 gap-0.5 sm:gap-1 w-full max-w-[300px] sm:max-w-[450px] md:max-w-[600px] mx-auto"
               onMouseLeave={handleMouseUp}
+              onTouchEnd={handleMouseUp}
             >
               {grid.map((row, x) => 
                 row.map((cell, y) => (
                   <button
                     key={`${x},${y}`}
-                    className={`w-8 h-8 text-center font-bold text-xs sm:text-sm md:text-base
+                    className={`w-5 h-5 sm:w-7 sm:h-7 md:w-8 md:h-8 text-center font-bold text-xs sm:text-sm
                       ${celdasEncontradas.includes(`${x},${y}`) ? 'bg-green-200' :
                         seleccionActual.includes(`${x},${y}`) ? 'bg-yellow-200' : 'bg-white'}
                       border border-gray-300 rounded`}
                     onMouseDown={() => handleMouseDown(x, y)}
                     onMouseEnter={() => handleMouseEnter(x, y)}
                     onMouseUp={handleMouseUp}
+                    onTouchStart={() => handleMouseDown(x, y)}
+                    onTouchMove={(e) => {
+                      const touch = e.touches[0];
+                      const element = document.elementFromPoint(touch.clientX, touch.clientY);
+                      const [x, y] = element.id.split(',').map(Number);
+                      handleMouseEnter(x, y);
+                    }}
+                    onTouchEnd={handleMouseUp}
+                    id={`${x},${y}`}
                   >
                     {cell}
                   </button>
                 ))
               )}
             </div>
-            <Button onClick={onVolver} className="mt-4 bg-sociologia-600 hover:bg-sociologia-700 text-white">
-              Volver a las actividades
-            </Button>
+            <div className="mt-4 text-center">
+              <Button onClick={onVolver} className="bg-sociologia-600 hover:bg-sociologia-700 text-white w-full sm:w-auto">
+                Volver a las actividades
+              </Button>
+            </div>
           </>
         )}
       </CardContent>
