@@ -101,13 +101,13 @@ const QuizInteractivo = ({ temaId, onVolver }) => {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="mb-4 text-sm sm:text-base">{question.pregunta}</p>
+          <p className="mb-4 text-base sm:text-xl">{question.pregunta}</p>
           <div className="space-y-3">
             {question.opciones.map((opcion, opIndex) => (
               <Button
                 key={opIndex}
                 variant="default"
-                className="w-full min-h-[60px] h-auto text-left justify-start py-3 px-4 transition-all duration-200 hover:bg-sociologia-500 focus:bg-sociologia-600 text-white transform hover:scale-105 text-xs sm:text-sm"
+                className="w-full min-h-[60px] h-auto text-left justify-start py-3 px-4 transition-all duration-200 hover:bg-sociologia-500 focus:bg-sociologia-600 text-white transform hover:scale-105 text-base sm:text-lg"
                 onClick={() => handleAnswerOptionClick(opIndex)}
               >
                 <span className="block whitespace-normal">{opcion}</span>
@@ -118,6 +118,7 @@ const QuizInteractivo = ({ temaId, onVolver }) => {
       </Card>
     </motion.div>
   );
+
 
   const renderReviewQuestion = (question, index) => {
     const userAnswer = userAnswers[index];

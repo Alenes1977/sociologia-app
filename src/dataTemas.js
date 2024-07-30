@@ -595,16 +595,6 @@ export const temasData = {
           respuestaCorrecta: 3
         },
         {
-          pregunta: "¿Qué aspecto de la capacidad lingüística humana se aprende en un contexto social?",
-          opciones: [
-            "La capacidad de hablar",
-            "Las estructuras gramaticales concretas",
-            "La capacidad de escuchar",
-            "La capacidad de pensar"
-          ],
-          respuestaCorrecta: 1
-        },
-        {
           pregunta: "¿Qué distingue principalmente el desarrollo histórico humano de la evolución biológica de otras especies?",
           opciones: [
             "Los humanos no evolucionan",
