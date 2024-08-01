@@ -1493,6 +1493,979 @@ export const temasData = {
           opciones: ["presocial", "postsocial", "antisocial", "extrasocial"]
         }
       ]
+    },
+    2: {
+      titulo: "TEMA 2",
+      subtitulo: "Cultura y diversidad cultural",
+      subtemas: [
+        {
+          titulo: "¿Qué es la sociología?",
+          conceptos: [
+            "Dificultades para una definición consensuada",
+            "El surgimiento de la sociología",
+            "Principales enfoques sociológicos"
+          ]
+        },
+        {
+          titulo: "La perspectiva relacional en la sociología",
+          conceptos: [
+            "Las semánticas de lo social",
+            "Refero, religo y efecto emergente"
+          ]
+        },
+        {
+          titulo: "La condición sociocultural del ser humano",
+          conceptos: [
+            "Entre el individuo y la sociedad: enfoques sobre la condición social humana",
+            "Una mirada ampliada: peculiaridades de la naturaleza humana"
+          ]
+        }
+      ],
+      conceptosClave: [
+        {
+          termino: "Cultura",
+          definicion: "Elemento fundamental en la vida humana que moldea nuestra forma de vivir y entender el mundo, manifestándose en todas nuestras actividades y estructuras sociales."
+        },
+        {
+          termino: "Cultura objetiva",
+          definicion: "Realidad objetivada que produce el desarrollo cultural, incluyendo artefactos, obras de arte, edificios y objetos propios de una comunidad humana."
+        },
+        {
+          termino: "Cultura subjetiva",
+          definicion: "Aspectos simbólicos de la cultura, incluyendo valores, normas y estructuras de pensamiento interiorizadas en la conciencia individual."
+        },
+        {
+          termino: "Cultura objetivante",
+          definicion: "Objetivación del espíritu humano que ejerce un condicionamiento posterior para la acción del hombre en sociedad."
+        },
+        {
+          termino: "Lenguaje",
+          definicion: "Sistema de símbolos que permite la comunicación entre los miembros de una comunidad, con el que también se transmite intergeneracionalmente conceptos, categorías de pensamiento y formas de entender el mundo."
+        },
+        {
+          termino: "Hipótesis Sapir-Whorf",
+          definicion: "Teoría que sugiere que la estructura del lenguaje que una persona habla influye en la manera en que esa persona percibe y conceptualiza el mundo."
+        },
+        {
+          termino: "Valores",
+          definicion: "Principios interpretativos y de juicio compartidos por una comunidad cultural que funcionan como criterios o pautas de comportamiento que orientan la acción."
+        },
+        {
+          termino: "Normas",
+          definicion: "Pautas de comportamiento que orientan la conducta de los miembros de una comunidad, concretando las exigencias de los valores en situaciones particulares."
+        },
+        {
+          termino: "Roles",
+          definicion: "Conjuntos de normas asociadas a posiciones sociales específicas."
+        },
+        {
+          termino: "Instituciones",
+          definicion: "Sistemas de normas que regulan áreas importantes de la vida social."
+        },
+        {
+          termino: "Instrumentos",
+          definicion: "Creaciones y objetos propios de cada sociedad, generalmente coherentes con los valores y normas que allí rigen."
+        },
+        {
+          termino: "Signos",
+          definicion: "Elementos que tienen significados compartidos y reconocidos por los miembros de una cultura."
+        },
+        {
+          termino: "Diversidad cultural",
+          definicion: "Multiplicidad de formas en que se expresan las culturas de los grupos y sociedades, manifestándose en variadas formas de expresión, creación y difusión cultural."
+        },
+        {
+          termino: "Etnocentrismo",
+          definicion: "Tendencia a considerar la propia cultura como superior a todas las demás, utilizándola como el estándar contra el cual se juzgan otras culturas."
+        },
+        {
+          termino: "Universalismo",
+          definicion: "Postura que afirma la existencia de valores o principios universales aplicables a todos los seres humanos y sociedades, independientemente de su contexto cultural específico."
+        },
+        {
+          termino: "Relativismo cultural",
+          definicion: "Postura que sostiene que todas las culturas o cosmovisiones culturales son igualmente válidas y que no pueden ser juzgadas desde los estándares de otra cultura."
+        },
+        {
+          termino: "Particularismo cultural",
+          definicion: "Perspectiva que enfatiza la singularidad de cada cultura y sostiene que los valores y las prácticas culturales solo pueden entenderse en su contexto socio-histórico específico."
+        },
+        {
+          termino: "Xenocentrismo",
+          definicion: "Preferencia por culturas extranjeras sobre la propia, a menudo resultado de un relativismo cultural extremo."
+        },
+        {
+          termino: "Particularismo histórico",
+          definicion: "Escuela de pensamiento en antropología que enfatiza la importancia de estudiar cada cultura en sus propios términos, sin imponer categorías o teorías preconcebidas."
+        },
+        {
+          termino: "Principio de No Contradicción",
+          definicion: "Principio lógico que establece que una cosa no puede ser y no ser la misma cosa a la vez y en el mismo sentido, considerado como un fundamento del pensamiento racional."
+        },
+        {
+          termino: "Nativización",
+          definicion: "Concepto que sugiere que solo se puede entender una cultura volviéndose 'nativo' de ella, es decir, integrándose completamente en esa cultura."
+        },
+        {
+          termino: "Traducción cultural",
+          definicion: "Proceso de trasladar significados de un contexto cultural a otro, cuya posibilidad es cuestionada por el relativismo cultural extremo."
+        },
+        {
+          termino: "Emancipación simbólica",
+          definicion: "Capacidad del lenguaje para establecer referencias arbitrarias y sin semblanza con la realidad referida"
+        },
+        {
+          termino: "Colere",
+          definicion: "Término latino del que deriva la palabra 'cultura', originalmente referido al cuidado y cultivo de la tierra, que luego se extendió metafóricamente al cultivo del espíritu humano."
+        },
+        {
+          termino: "Civilización",
+          definicion: "Concepto a menudo usado como sinónimo de cultura, pero históricamente asociado más con el refinamiento de la conducta y los modales, especialmente en el contexto de la corte francesa."
+        },
+        {
+          termino: "Kultur",
+          definicion: "Concepto alemán de cultura que se desarrolló en contraposición a la idea de civilización, enfatizando el desarrollo interno del ser humano más que los comportamientos externos."
+        },
+        {
+          termino: "Autorreferencialidad",
+          definicion: "Problema lógico-argumental que afecta al relativismo cultural, donde la afirmación de que todas las verdades son relativas se aplica a sí misma, cuestionando su propia validez universal."
+        },
+        
+      ],
+      preguntasQuiz: [
+      {
+          pregunta: "¿Qué antropólogo propuso una de las definiciones más influyentes de cultura, describiéndola como 'ese todo complejo'?",
+          opciones: [
+            "Franz Boas",
+            "Bronisław Malinowski",
+            "E.B. Tylor",
+            "Claude Lévi-Strauss"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué antropólogo propuso una definición de cultura que enfatiza su carácter simbólico y semiótico?",
+          opciones: [
+            "Clifford Geertz",
+            "Margaret Mead",
+            "Ruth Benedict",
+            "Marshall Sahlins"
+          ],
+          respuestaCorrecta: 0
+        },
+        {
+          pregunta: "¿Qué concepto se refiere a la coexistencia de múltiples culturas en una misma sociedad?",
+          opciones: [
+            "Pluralismo cultural",
+            "Diversidad cultural",
+            "Multiculturalismo",
+            "Interculturalidad"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué término latino es el origen etimológico de la palabra 'cultura'?",
+          opciones: [
+            "Culturus",
+            "Colere",
+            "Culturalitas",
+            "Civitas"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Qué concepto se refiere a la realidad objetivada que produce el desarrollo cultural?",
+          opciones: [
+            "Cultura subjetiva",
+            "Cultura objetivante",
+            "Cultura objetiva",
+            "Cultura material"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué hipótesis sugiere que la estructura del lenguaje influye en cómo percibimos y conceptualizamos el mundo?",
+          opciones: [
+            "Hipótesis de Sapir-Whorf",
+            "Teoría de la relatividad lingüística",
+            "Hipótesis del determinismo cultural",
+            "Teoría de la construcción social del lenguaje"
+          ],
+          respuestaCorrecta: 0
+        },
+        {
+          pregunta: "¿Qué término se utiliza para describir la tendencia a considerar la propia cultura como superior a todas las demás?",
+          opciones: [
+            "Relativismo cultural",
+            "Etnocentrismo",
+            "Universalismo",
+            "Particularismo"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Qué postura afirma la existencia de valores o principios universales aplicables a todos los seres humanos?",
+          opciones: [
+            "Relativismo",
+            "Particularismo",
+            "Etnocentrismo",
+            "Universalismo"
+          ],
+          respuestaCorrecta: 3
+        },
+        {
+          pregunta: "¿Qué término describe la postura que sostiene que todas las culturas son igualmente válidas?",
+          opciones: [
+            "Etnocentrismo",
+            "Universalismo",
+            "Relativismo cultural",
+            "Particularismo histórico"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué concepto se refiere a la preferencia por culturas extranjeras sobre la propia?",
+          opciones: [
+            "Etnocentrismo",
+            "Xenocentrismo",
+            "Relativismo",
+            "Universalismo"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Qué principio lógico establece que una cosa no puede ser y no ser la misma cosa a la vez y en el mismo sentido?",
+          opciones: [
+            "Principio de identidad",
+            "Principio de no contradicción",
+            "Principio del tercero excluido",
+            "Principio de razón suficiente"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Qué concepto sugiere que solo se puede entender una cultura volviéndose 'nativo' de ella?",
+          opciones: [
+            "Aculturación",
+            "Enculturación",
+            "Nativización",
+            "Asimilación cultural"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué término se refiere a los aspectos simbólicos de la cultura interiorizados en la conciencia individual?",
+          opciones: [
+            "Cultura objetiva",
+            "Cultura subjetiva",
+            "Cultura material",
+            "Cultura objetivante"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Qué término se utiliza para describir los principios interpretativos y de juicio compartidos por una comunidad cultural?",
+          opciones: [
+            "Normas",
+            "Roles",
+            "Valores",
+            "Instituciones"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué concepto se refiere a las pautas de comportamiento que orientan la conducta de los miembros de una comunidad?",
+          opciones: [
+            "Valores",
+            "Roles",
+            "Instituciones",
+            "Normas"
+          ],
+          respuestaCorrecta: 3
+        },
+        {
+          pregunta: "¿Qué término describe los conjuntos de normas asociadas a posiciones sociales específicas?",
+          opciones: [
+            "Instituciones",
+            "Valores",
+            "Roles",
+            "Normas"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué concepto se refiere a los sistemas de normas que regulan áreas importantes de la vida social?",
+          opciones: [
+            "Roles",
+            "Valores",
+            "Normas",
+            "Instituciones"
+          ],
+          respuestaCorrecta: 3
+        },
+        {
+          pregunta: "¿Qué término describe las creaciones y objetos propios de cada sociedad?",
+          opciones: [
+            "Signos",
+            "Símbolos",
+            "Instrumentos",
+            "Artefactos"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué concepto se refiere a los elementos que tienen significados compartidos y reconocidos por los miembros de una cultura?",
+          opciones: [
+            "Instrumentos",
+            "Símbolos",
+            "Signos",
+            "Artefactos"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué término describe la multiplicidad de formas en que se expresan las culturas de los grupos y sociedades?",
+          opciones: [
+            "Pluralismo cultural",
+            "Multiculturalismo",
+            "Diversidad cultural",
+            "Heterogeneidad social"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué concepto alemán se desarrolló en contraposición a la idea de civilización?",
+          opciones: [
+            "Bildung",
+            "Kultur",
+            "Weltanschauung",
+            "Zeitgeist"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Qué problema lógico-argumental afecta al relativismo cultural?",
+          opciones: [
+            "Autorreferencialidad",
+            "Circularidad",
+            "Falacia naturalista",
+            "Regresión infinita"
+          ],
+          respuestaCorrecta: 0
+        },
+        {
+          pregunta: "¿Qué consecuencia potencial del relativismo cultural extremo dificulta juzgar prácticas culturales dañinas?",
+          opciones: [
+            "Etnocentrismo inverso",
+            "Xenofilia cultural",
+            "Parálisis moral",
+            "Relativismo ético"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué proceso describe cómo los elementos culturales se pasan de una generación a otra?",
+          opciones: [
+            "Enculturación",
+            "Socialización",
+            "Transmisión intergeneracional de la cultura",
+            "Herencia cultural"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué término describe los mecanismos de control asociados a las normas culturales?",
+          opciones: [
+            "Coerción social",
+            "Presión normativa",
+            "Sanciones sociales",
+            "Control cultural"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué término describe la objetivación del espíritu humano que condiciona la acción futura?",
+          opciones: [
+            "Cultura objetiva",
+            "Cultura subjetiva",
+            "Cultura objetivante",
+            "Cultura material"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué escuela de pensamiento en antropología enfatiza la importancia de estudiar cada cultura en sus propios términos?",
+          opciones: [
+            "Funcionalismo",
+            "Estructuralismo",
+            "Particularismo histórico",
+            "Evolucionismo cultural"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué proceso se cuestiona en el debate sobre la posibilidad de entendimiento intercultural?",
+          opciones: [
+            "Asimilación cultural",
+            "Aculturación",
+            "Traducción cultural",
+            "Integración cultural"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué concepto se refiere a la forma en que el lenguaje configura nuestra comprensión del mundo?",
+          opciones: [
+            "Determinismo lingüístico",
+            "Relatividad lingüística",
+            "Cosmovisión cultural",
+            "Estructuralismo lingüístico"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué término describe la tendencia a juzgar otras culturas basándose en los estándares de la propia?",
+          opciones: [
+            "Etnocentrismo",
+            "Xenocentrismo",
+            "Relativismo cultural",
+            "Universalismo cultural"
+          ],
+          respuestaCorrecta: 0
+        },
+        {
+          pregunta: "¿Qué concepto se refiere a la idea de que los valores son expresiones socio-culturales concretas?",
+          opciones: [
+            "Relativismo axiológico",
+            "Particularismo cultural",
+            "Constructivismo social",
+            "Determinismo cultural"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Qué término describe la capacidad humana para utilizar referentes lingüísticos sin parecido o semejanza con la realidad referida?",
+          opciones: [
+            "Abstracción cognitiva",
+            "Trascendencia simbólica",
+            "Emancipación simbólica",
+            "Elevación conceptual"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué filósofo expresó la distinción entre cultura y civilización afirmando que 'nos cultivamos por medio del arte y de la ciencia, nos civilizamos al adquirir buenos modales y refinamientos sociales'?",
+          opciones: [
+            "Jean-Jacques Rousseau",
+            "Immanuel Kant",
+            "Georg Wilhelm Friedrich Hegel",
+            "John Locke"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Qué caso suele mencionarse como ejemplo de la importancia del lenguaje para acceder al mundo simbólico?",
+          opciones: [
+            "El caso de Victor de Aveyron",
+            "El caso de Genie",
+            "El caso de Helen Keller",
+            "El caso de Kaspar Hauser"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué característica de los valores cabe resaltar en relación a su variación entre culturas y épocas?",
+          opciones: [
+            "Son universalmente aceptados",
+            "Son históricamente relativos",
+            "Son inmutables en el tiempo",
+            "Son independientes del contexto cultural"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Qué argumento del relativismo cultural se refiere a la imposibilidad de juzgar una cultura desde parámetros ajenos a ella?",
+          opciones: [
+            "Argumento de la autorreferencialidad",
+            "Argumento de la incomunicabilidad",
+            "Argumento de la equivalencia cultural",
+            "Argumento de la inconmensurabilidad"
+          ],
+          respuestaCorrecta: 3
+        },
+        {
+          pregunta: "¿Qué problema enfrenta el relativismo cultural en relación con los derechos humanos?",
+          opciones: [
+            "La promoción excesiva de los derechos humanos",
+            "La dificultad para justificar prácticas culturales universales",
+            "La imposibilidad de criticar prácticas que violan los derechos humanos",
+            "La sobrevaloración de los derechos individuales sobre los colectivos"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "Según los apuntes, ¿qué desafío presenta el relativismo cultural extremo para la comunicación intercultural?",
+          opciones: [
+            "Hace la comunicación más eficiente",
+            "Promueve la comprensión mutua",
+            "Sugiere que las culturas son mutuamente ininteligibles",
+            "Facilita el aprendizaje de idiomas extranjeros"
+          ],
+          respuestaCorrecta: 2
+        },
+       
+      ],
+      relacionesConceptos: [
+        {
+          concepto1: "Cultura objetiva",
+          concepto2: "Cultura subjetiva",
+          relacion: "Aspectos complementarios de la cultura que representan la realidad material y simbólica respectivamente"
+        },
+        {
+          concepto1: "Lenguaje",
+          concepto2: "Emancipación simbólica",
+          relacion: "El lenguaje permite al ser humano trascender lo inmediato y pensar en términos abstractos"
+        },
+        {
+          concepto1: "Valores",
+          concepto2: "Normas",
+          relacion: "Los valores se concretan en normas específicas que orientan el comportamiento"
+        },
+        {
+          concepto1: "Etnocentrismo",
+          concepto2: "Relativismo cultural",
+          relacion: "Posturas opuestas en la evaluación de culturas diferentes a la propia"
+        },
+        {
+          concepto1: "Universalismo",
+          concepto2: "Particularismo cultural",
+          relacion: "Enfoques contrastantes sobre la existencia de principios aplicables a todas las culturas"
+        },
+        {
+          concepto1: "Cultura objetivante",
+          concepto2: "Condicionamiento social",
+          relacion: "Las creaciones culturales ejercen influencia en las acciones futuras de los individuos"
+        },
+        {
+          concepto1: "Principio de No Contradicción",
+          concepto2: "Pensamiento racional",
+          relacion: "Fundamento lógico universal que habilita el pensamiento y la comunicación"
+        },
+        {
+          concepto1: "Nativización",
+          concepto2: "Comprensión cultural",
+          relacion: "Idea de que solo se puede entender plenamente una cultura volviéndose 'nativo' de ella"
+        },
+        {
+          concepto1: "Relativismo cultural extremo",
+          concepto2: "Incomunicabilidad entre culturas",
+          relacion: "Postura que sugiere que las culturas son mutuamente ininteligibles"
+        },
+        {
+          concepto1: "Autorreferencialidad",
+          concepto2: "Relativismo cultural",
+          relacion: "Problema lógico que cuestiona la coherencia del relativismo al aplicar sus propios principios a sí mismo"
+        },
+        {
+          concepto1: "Roles",
+          concepto2: "Instituciones",
+          relacion: "Los roles son conjuntos de normas asociadas a posiciones sociales dentro de las instituciones"
+        },
+        {
+          concepto1: "Instrumentos",
+          concepto2: "Signos",
+          relacion: "Ambos son creaciones culturales que reflejan y transmiten significados en una sociedad"
+        },
+        {
+          concepto1: "Programa fuerte del relativismo",
+          concepto2: "Formas de pensamiento universales",
+          relacion: "Versión del relativismo que niega la existencia de estructuras de pensamiento comunes a todas las culturas"
+        },
+        {
+          concepto1: "Traducción cultural",
+          concepto2: "Entendimiento intercultural",
+          relacion: "Proceso cuestionado por el relativismo extremo que es fundamental para la comprensión entre culturas"
+        },
+        {
+          concepto1: "Sanciones sociales",
+          concepto2: "Normas culturales",
+          relacion: "Mecanismos de control asociados al cumplimiento o incumplimiento de las normas en una sociedad"
+        }
+      ],
+      crucigrama: {
+        palabras: [
+          {
+            palabra: "CULTURA",
+            pista: "Elemento fundamental que moldea nuestra forma de vivir y entender el mundo"
+          },
+          {
+            palabra: "LENGUAJE",
+            pista: "Sistema de símbolos que permite la comunicación y la emancipación simbólica"
+          },
+          {
+            palabra: "VALORES",
+            pista: "Principios interpretativos y de juicio compartidos por una comunidad cultural"
+          },
+          {
+            palabra: "NORMAS",
+            pista: "Pautas de comportamiento que orientan la conducta en una comunidad"
+          },
+          {
+            palabra: "ROLES",
+            pista: "Conjuntos de normas asociadas a posiciones sociales específicas"
+          },
+          {
+            palabra: "ETNOCENTRISMO",
+            pista: "Tendencia a considerar la propia cultura como superior a todas las demás"
+          },
+          {
+            palabra: "RELATIVISMO",
+            pista: "Postura que sostiene que todas las culturas son igualmente válidas"
+          },
+          {
+            palabra: "UNIVERSALISMO",
+            pista: "Postura que afirma la existencia de principios aplicables a todos los seres humanos"
+          },
+          {
+            palabra: "XENOCENTRISMO",
+            pista: "Preferencia por culturas extranjeras sobre la propia"
+          },
+          {
+            palabra: "NATIVIZACION",
+            pista: "Proceso de volverse 'nativo' de una cultura para entenderla plenamente"
+          },
+          {
+            palabra: "COLERE",
+            pista: "Término latino del que deriva la palabra 'cultura'"
+          },
+          {
+            palabra: "CIVILIZACION",
+            pista: "Concepto a menudo usado como sinónimo de cultura, pero con connotaciones diferentes"
+          },
+          {
+            palabra: "KANT",
+            pista: "Filósofo que distinguió entre la idea de moralidad en la cultura y su uso en la civilización"
+          },
+          {
+            palabra: "SAPIR-WHORF",
+            pista: "Hipótesis que sugiere que la estructura del lenguaje influye en la percepción del mundo"
+          },
+          {
+            palabra: "OBJETIVA",
+            pista: "Tipo de cultura que se refiere a la realidad material producida por el desarrollo cultural"
+          },
+          {
+            palabra: "SUBJETIVA",
+            pista: "Tipo de cultura que se refiere a los aspectos simbólicos interiorizados en la conciencia individual"
+          },
+          {
+            palabra: "OBJETIVANTE",
+            pista: "Tipo de cultura que condiciona la acción futura del hombre en sociedad"
+          },
+          {
+            palabra: "SIGNOS",
+            pista: "Elementos con significados compartidos y reconocidos en una cultura"
+          },
+          {
+            palabra: "INSTRUMENTOS",
+            pista: "Creaciones y objetos propios de cada sociedad"
+          },
+          {
+            palabra: "INSTITUCIONES",
+            pista: "Sistemas de normas que regulan áreas importantes de la vida social"
+          },
+          {
+            palabra: "DIVERSIDAD",
+            pista: "Multiplicidad de formas en que se expresan las culturas de los grupos y sociedades"
+          },
+          {
+            palabra: "PARTICULARISMO",
+            pista: "Perspectiva que enfatiza la singularidad de cada cultura"
+          },
+          {
+            palabra: "AUTORREFERENCIALIDAD",
+            pista: "Problema lógico que afecta al relativismo cultural"
+          },
+          {
+            palabra: "TRADUCCION",
+            pista: "Proceso de trasladar significados de un contexto cultural a otro"
+          },
+          {
+            palabra: "COSMOVISIONES",
+            pista: "Formas de ver e interpretar el mundo influenciadas por la cultura y el lenguaje"
+          },
+          {
+            palabra: "SANCIONES",
+            pista: "Mecanismos de control asociados al cumplimiento o incumplimiento de las normas culturales"
+          },
+          {
+            palabra: "INCOMUNICABILIDAD",
+            pista: "Idea propuesta por el relativismo extremo sobre la imposibilidad de entendimiento entre culturas"
+          },
+          {
+            palabra: "TYLOR",
+            pista: "Antropólogo que propuso una de las definiciones más influyentes de cultura"
+          },
+          {
+            palabra: "GEERTZ",
+            pista: "Antropólogo que definió la cultura como un sistema de significaciones y símbolos"
+          },
+        ]
+      },
+      preguntasCascada: [
+        {
+          nivel: 1,
+          pregunta: "¿Qué término se utiliza para describir el conjunto de creencias, costumbres y conocimientos de una sociedad?",
+          opciones: ["Civilización", "Cultura", "Sociedad", "Comunidad"],
+          respuestaCorrecta: "Cultura"
+        },
+        {
+          nivel: 1,
+          pregunta: "¿Qué filósofo distinguió entre la idea de moralidad en la cultura y su uso en la civilización?",
+          opciones: ["Platón", "Aristóteles", "Kant", "Hegel"],
+          respuestaCorrecta: "Kant"
+        },
+        {
+          nivel: 2,
+          pregunta: "¿Qué término latino es el origen etimológico de la palabra 'cultura'?",
+          opciones: ["Culturalitas", "Colere", "Civitas", "Cogito"],
+          respuestaCorrecta: "Colere"
+        },
+        {
+          nivel: 2,
+          pregunta: "¿Qué concepto se refiere a la tendencia a considerar la propia cultura como superior a todas las demás?",
+          opciones: ["Xenocentrismo", "Etnocentrismo", "Relativismo", "Universalismo"],
+          respuestaCorrecta: "Etnocentrismo"
+        },
+        {
+          nivel: 3,
+          pregunta: "¿Qué término se utiliza para describir los aspectos simbólicos de la cultura interiorizados en la conciencia individual?",
+          opciones: ["Cultura objetiva", "Cultura subjetiva", "Cultura material", "Cultura simbólica"],
+          respuestaCorrecta: "Cultura subjetiva"
+        },
+        {
+          nivel: 3,
+          pregunta: "¿Qué concepto se refiere a los elementos que tienen significados compartidos y reconocidos por los miembros de una cultura?",
+          opciones: ["Símbolos", "Signos", "Códigos", "Iconos"],
+          respuestaCorrecta: "Signos"
+        },
+        {
+          nivel: 4,
+          pregunta: "¿Qué hipótesis sugiere que la estructura del lenguaje influye en cómo percibimos y conceptualizamos el mundo?",
+          opciones: ["Hipótesis de Sapir-Whorf", "Teoría de la relatividad lingüística", "Hipótesis del determinismo cultural", "Teoría de la construcción social del lenguaje"],
+          respuestaCorrecta: "Hipótesis de Sapir-Whorf"
+        },
+        {
+          nivel: 4,
+          pregunta: "¿Qué término describe la postura que sostiene que todas las culturas son igualmente válidas?",
+          opciones: ["Etnocentrismo", "Universalismo", "Relativismo cultural", "Particularismo histórico"],
+          respuestaCorrecta: "Relativismo cultural"
+        },
+        {
+          nivel: 5,
+          pregunta: "¿Qué concepto se refiere a la objetivación del espíritu humano que ejerce un condicionamiento posterior para la acción del hombre en sociedad?",
+          opciones: ["Cultura objetiva", "Cultura subjetiva", "Cultura objetivante", "Cultura material"],
+          respuestaCorrecta: "Cultura objetivante"
+        },
+        {
+          nivel: 5,
+          pregunta: "¿Qué principio lógico establece que una cosa no puede ser y no ser la misma cosa a la vez y en el mismo sentido?",
+          opciones: ["Principio de identidad", "Principio de no contradicción", "Principio del tercero excluido", "Principio de razón suficiente"],
+          respuestaCorrecta: "Principio de no contradicción"
+        },
+        {
+          nivel: 6,
+          pregunta: "¿Qué concepto sugiere que solo se puede entender una cultura volviéndose 'nativo' de ella?",
+          opciones: ["Aculturación", "Enculturación", "Nativización", "Asimilación cultural"],
+          respuestaCorrecta: "Nativización"
+        },
+        {
+          nivel: 6,
+          pregunta: "¿Qué término describe la preferencia por culturas extranjeras sobre la propia?",
+          opciones: ["Etnocentrismo", "Xenocentrismo", "Relativismo", "Universalismo"],
+          respuestaCorrecta: "Xenocentrismo"
+        },
+        {
+          nivel: 7,
+          pregunta: "¿Qué escuela de pensamiento en antropología enfatiza la importancia de estudiar cada cultura en sus propios términos?",
+          opciones: ["Funcionalismo", "Estructuralismo", "Particularismo histórico", "Evolucionismo cultural"],
+          respuestaCorrecta: "Particularismo histórico"
+        },
+        {
+          nivel: 7,
+          pregunta: "¿Qué problema lógico-argumental afecta al relativismo cultural?",
+          opciones: ["Autorreferencialidad", "Circularidad", "Falacia naturalista", "Regresión infinita"],
+          respuestaCorrecta: "Autorreferencialidad"
+        },
+        {
+          nivel: 8,
+          pregunta: "¿Qué idea propuesta por algunas versiones del relativismo cultural sugiere que las culturas son mutuamente ininteligibles?",
+          opciones: ["Barrera cultural", "Incomunicabilidad entre culturas", "Aislamiento cultural", "Intraducibilidad cultural"],
+          respuestaCorrecta: "Incomunicabilidad entre culturas"
+        },
+        {
+          nivel: 8,
+          pregunta: "¿Qué concepto se refiere a la capacidad del lenguaje para permitir al ser humano trascender lo inmediato y concreto?",
+          opciones: ["Abstracción cognitiva", "Trascendencia simbólica", "Emancipación simbólica", "Elevación conceptual"],
+          respuestaCorrecta: "Emancipación simbólica"
+        },
+        {
+          nivel: 9,
+          pregunta: "¿Qué caso puede mencionarse como ejemplo de la importancia del lenguaje para acceder al mundo simbólico?",
+          opciones: ["El caso de Victor del Amazonas", "El caso de Genie", "El caso de Helen Keller", "El caso de Kaspar Hauser"],
+          respuestaCorrecta: "El caso de Helen Keller"
+        },
+        {
+          nivel: 9,
+          pregunta: "¿Qué argumento del relativismo cultural se refiere a la imposibilidad de juzgar una cultura desde parámetros ajenos a ella?",
+          opciones: ["Argumento de la autorreferencialidad", "Argumento de la incomunicabilidad", "Argumento de la equivalencia cultural", "Argumento de la inconmensurabilidad"],
+          respuestaCorrecta: "Argumento de la inconmensurabilidad"
+        },
+        {
+          nivel: 10,
+          pregunta: "¿Qué argumento utiliza el relativismo cultural para cuestionar la existencia de una 'lógica universal' que articula nuestro pensamiento y comunicación?",
+          opciones: [
+            "La existencia de correlaciones en el lenguaje cotidiano",
+            "La variabilidad de las estructuras gramaticales entre idiomas",
+            "La imposibilidad de traducir ciertos conceptos entre culturas",
+            "La existencia de matemáticas alternativas"
+          ],
+          respuestaCorrecta: "La existencia de matemáticas alternativas"
+        },
+        {
+          nivel: 10,
+          pregunta: "¿Qué problema enfrenta el relativismo cultural en relación con los derechos humanos?",
+          opciones: ["La promoción excesiva de los derechos humanos", "La dificultad para justificar prácticas culturales universales", "La imposibilidad de criticar prácticas que violan los derechos humanos", "La sobrevaloración de los derechos individuales sobre los colectivos"],
+          respuestaCorrecta: "La imposibilidad de criticar prácticas que violan los derechos humanos"
+        }      
+      ],
+      completarFrase: [
+        {
+          frase: "La [BLANK] es un elemento fundamental en la vida humana, diferenciándonos de otras especies y moldeando nuestra forma de vivir y entender el mundo.",
+          palabraCorrecta: "cultura",
+          opciones: ["cultura", "sociedad", "civilización", "educación"]
+        },
+        {
+          frase: "La cultura [BLANK] se refiere a la realidad objetivada que produce el desarrollo cultural.",
+          palabraCorrecta: "objetiva",
+          opciones: ["objetiva", "subjetiva", "material", "inmaterial"]
+        },
+        {
+          frase: "La cultura [BLANK] comprende el conjunto de valores, normas y estructuras de pensamiento interiorizadas en la conciencia individual.",
+          palabraCorrecta: "subjetiva",
+          opciones: ["subjetiva", "objetiva", "material", "inmaterial"]
+        },
+        {
+          frase: "La cultura [BLANK] se refiere a la objetivación del espíritu humano que ejerce un condicionamiento posterior para la acción del hombre en sociedad.",
+          palabraCorrecta: "objetivante",
+          opciones: ["objetivante", "subjetivante", "material", "inmaterial"]
+        },
+        {
+          frase: "El término 'cultura' deriva de las voces latinas 'colere' o [BLANK].",
+          palabraCorrecta: "cultus",
+          opciones: ["cultus", "civitas", "societas", "humanitas"]
+        },
+        {
+          frase: "El [BLANK] proporciona una emancipación simbólica al ser humano, permitiéndole la abstracción en sus usos y comunicaciones lingüísticas.",
+          palabraCorrecta: "lenguaje",
+          opciones: ["lenguaje", "arte", "pensamiento", "trabajo"]
+        },
+        {
+          frase: "La hipótesis de [BLANK] sugiere que la estructura del lenguaje que una persona habla influye en la manera en que esa persona percibe y conceptualiza el mundo.",
+          palabraCorrecta: "Sapir-Whorf",
+          opciones: ["Sapir-Whorf", "Chomsky", "Saussure", "Wittgenstein"]
+        },
+        {
+          frase: "Los [BLANK] son principios interpretativos y de juicio compartidos por una comunidad cultural.",
+          palabraCorrecta: "valores",
+          opciones: ["valores", "símbolos", "ritos", "mitos"]
+        },
+        {
+          frase: "Las [BLANK] son pautas de comportamiento que orientan la conducta de los miembros de una comunidad.",
+          palabraCorrecta: "normas",
+          opciones: ["normas", "leyes", "costumbres", "tradiciones"]
+        },
+        {
+          frase: "Los [BLANK] son conjuntos de normas asociadas a posiciones sociales específicas.",
+          palabraCorrecta: "roles",
+          opciones: ["roles", "status", "cargos", "funciones"]
+        },
+        {
+          frase: "El [BLANK] es la tendencia a considerar la propia cultura como superior a todas las demás.",
+          palabraCorrecta: "etnocentrismo",
+          opciones: ["etnocentrismo", "relativismo", "universalismo", "particularismo"]
+        },
+        {
+          frase: "El [BLANK] cultural es la postura que sostiene que todas las culturas o cosmovisiones culturales son igualmente válidas.",
+          palabraCorrecta: "relativismo",
+          opciones: ["relativismo", "absolutismo", "universalismo", "etnocentrismo"]
+        },
+        {
+          frase: "El [BLANK] afirma la existencia de valores o principios universales aplicables a todos los seres humanos y sociedades.",
+          palabraCorrecta: "universalismo",
+          opciones: ["universalismo", "particularismo", "relativismo", "etnocentrismo"]
+        },
+        {
+          frase: "El [BLANK] histórico enfatiza la singularidad de cada cultura y sostiene que los valores y las prácticas culturales solo pueden entenderse en su contexto específico.",
+          palabraCorrecta: "particularismo",
+          opciones: ["particularismo", "universalismo", "relativismo", "etnocentrismo"]
+        },
+        {
+          frase: "El [BLANK] es la preferencia por culturas extranjeras sobre la propia.",
+          palabraCorrecta: "xenocentrismo",
+          opciones: ["xenocentrismo", "etnocentrismo", "eurocentrismo", "relativismo"]
+        },
+        {
+          frase: "El [BLANK] es una escuela de pensamiento en antropología que enfatiza la importancia de estudiar cada cultura en sus propios términos.",
+          palabraCorrecta: "particularismo",
+          opciones: ["particularismo", "funcionalismo", "estructuralismo", "evolucionismo"]
+        },
+        {
+          frase: "El programa [BLANK] del relativismo niega la existencia de formas de pensamiento universales.",
+          palabraCorrecta: "fuerte",
+          opciones: ["fuerte", "débil", "moderado", "extremo"]
+        },
+        {
+          frase: "El Principio de No [BLANK] establece que una cosa no puede ser y no ser la misma cosa a la vez y en el mismo sentido.",
+          palabraCorrecta: "Contradicción",
+          opciones: ["Contradicción", "Identidad", "Causalidad", "Razón"]
+        },
+        {
+          frase: "La [BLANK] es el concepto que sugiere que solo se puede entender una cultura volviéndose 'nativo' de ella.",
+          palabraCorrecta: "nativización",
+          opciones: ["nativización", "aculturación", "enculturación", "socialización"]
+        },
+        {
+          frase: "La [BLANK] cultural se refiere al proceso de trasladar significados de un contexto cultural a otro.",
+          palabraCorrecta: "traducción",
+          opciones: ["traducción", "transferencia", "transmisión", "transculturación"]
+        },
+        {
+          frase: "La [BLANK] cultural es la multiplicidad de formas en que se expresan las culturas de los grupos y sociedades.",
+          palabraCorrecta: "diversidad",
+          opciones: ["diversidad", "unidad", "homogeneidad", "uniformidad"]
+        },
+        {
+          frase: "La [BLANK] es un problema lógico-argumental que afecta al relativismo cultural, cuestionando su propia validez universal.",
+          palabraCorrecta: "autorreferencialidad",
+          opciones: ["autorreferencialidad", "circularidad", "inconsistencia", "paradoja"]
+        },
+        {
+          frase: "El filósofo [BLANK] distinguió entre la idea de moralidad en la cultura y su uso en la civilización.",
+          palabraCorrecta: "Kant",
+          opciones: ["Kant", "Hegel", "Nietzsche", "Rousseau"]
+        },
+        {
+          frase: "La [BLANK] simbólica es la capacidad del lenguaje para permitir al ser humano desligarse de los referentes por semejanza con el objeto referido.",
+          palabraCorrecta: "emancipación",
+          opciones: ["emancipación", "liberación", "elevación", "transformación"]
+        },
+        {
+          frase: "El caso de [BLANK] se menciona como ejemplo de la importancia del lenguaje para acceder al mundo simbólico.",
+          palabraCorrecta: "Helen Keller",
+          opciones: ["Helen Keller", "Anne Sullivan", "Louis Braille", "Alexander Graham Bell"]
+        }
+      ]
     }
     // Aquí puedes añadir más temas en el futuro
   };
