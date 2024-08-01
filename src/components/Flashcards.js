@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
-import { HelpCircle, Shuffle, ArrowLeft, ArrowRight, Lightbulb, Book, CheckCircle } from 'lucide-react';
+import { HelpCircle, ArrowLeft, ArrowRight, Lightbulb, Book, CheckCircle } from 'lucide-react';
 import { temasData } from '../dataTemas';
 
 // Definimos el componente Progress aquí mismo para evitar problemas de importación
@@ -58,12 +58,6 @@ const Flashcards = ({ temaId, onVolver }) => {
     setCurrentCardIndex((prevIndex) => (prevIndex - 1 + cards.length) % cards.length);
   };
 
-  const shuffleCards = () => {
-    setCards(shuffleArray([...cards]));
-    setCurrentCardIndex(0);
-    setIsFlipped(false);
-  };
-
   if (cards.length === 0) {
     return <div className="text-center text-sociologia-600 font-semibold">Cargando flashcards...</div>;
   }
@@ -78,7 +72,6 @@ const Flashcards = ({ temaId, onVolver }) => {
         <ol className="list-decimal list-inside space-y-2 sm:space-y-3 text-sm sm:text-base text-sociologia-600">
           <li>Haz clic en la tarjeta para voltearla y ver la definición.</li>
           <li>Usa los botones de navegación para moverte entre las tarjetas.</li>
-          <li>El botón "Mezclar" reorganizará aleatoriamente las tarjetas.</li>
           <li>Tu progreso se guardará mientras repasas las tarjetas.</li>
         </ol>
         <Button 
@@ -156,14 +149,11 @@ const Flashcards = ({ temaId, onVolver }) => {
             <Progress value={reviewedCards.size} max={cards.length} />
           </div>
 
-          <div className="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0 sm:space-x-2">
-            <Button onClick={prevCard} variant="outline" className="w-full sm:w-auto border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm">
+          <div className="flex justify-between space-x-2">
+            <Button onClick={prevCard} variant="outline" className="w-1/2 border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm">
               <ArrowLeft className="mr-2 h-4 w-4" /> Anterior
             </Button>
-            <Button onClick={shuffleCards} variant="default" className="w-full sm:w-auto bg-sociologia-500 hover:bg-sociologia-600 text-white transition-all duration-300 transform hover:scale-105 shadow-md">
-              <Shuffle className="mr-2 h-4 w-4" /> Mezclar
-            </Button>
-            <Button onClick={nextCard} variant="outline" className="w-full sm:w-auto border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm">
+            <Button onClick={nextCard} variant="outline" className="w-1/2 border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm">
               Siguiente <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>

@@ -228,7 +228,7 @@ const QuizInteractivo = ({ temaId, onVolver }) => {
     const score = userAnswers.filter(
       (answer, index) => answer === shuffledQuestions[index].respuestaCorrecta
     ).length;
-
+  
     return (
       <div className="space-y-4 relative">
         {mostrarConfeti && (
@@ -239,7 +239,7 @@ const QuizInteractivo = ({ temaId, onVolver }) => {
             numberOfPieces={200}
           />
         )}
-        <div className="flex flex-col items-center mb-4">
+        <div className="flex flex-col items-center mb-6">
           <h2 className="text-2xl font-bold text-sociologia-700 mb-4 text-center">
             {score / shuffledQuestions.length > 0.9 
               ? "¡Felicidades! Has obtenido un resultado excelente."
@@ -248,20 +248,43 @@ const QuizInteractivo = ({ temaId, onVolver }) => {
           <p className="text-xl text-sociologia-600 mb-6 text-center">
             Has acertado <span className="font-bold text-sociologia-700">{score}</span> de <span className="font-bold text-sociologia-700">{shuffledQuestions.length}</span> preguntas
           </p>
-          <div className="space-x-4 mb-6">
-            <Button onClick={onVolver} variant="default" className="bg-sociologia-600 hover:bg-sociologia-700 text-white">
+          <div className="flex flex-col sm:flex-row w-full sm:w-auto space-y-2 sm:space-y-0 sm:space-x-4">
+            <Button 
+              onClick={onVolver} 
+              variant="default" 
+              className="w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white px-6 py-2"
+            >
               Volver a las actividades
             </Button>
-            <Button onClick={resetQuiz} variant="default" className="bg-sociologia-600 hover:bg-sociologia-700 text-white">
+            <Button 
+              onClick={resetQuiz} 
+              variant="default" 
+              className="w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white px-6 py-2"
+            >
               Reiniciar Quiz
             </Button>
           </div>
         </div>
         {shuffledQuestions.map((question, index) => renderReviewQuestion(question, index))}
+        <div className="mt-8 flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4">
+          <Button 
+            onClick={onVolver} 
+            variant="default" 
+            className="w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white px-6 py-2"
+          >
+            Volver a las actividades
+          </Button>
+          <Button 
+            onClick={resetQuiz} 
+            variant="default" 
+            className="w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white px-6 py-2"
+          >
+            Reiniciar Quiz
+          </Button>
+        </div>
       </div>
     );
   }
-
   if (shuffledQuestions.length === 0) {
     return <div>Cargando preguntas...</div>;
   }

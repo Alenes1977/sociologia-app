@@ -1543,7 +1543,7 @@ export const temasData = {
           definicion: "Sistema de símbolos que permite la comunicación entre los miembros de una comunidad, con el que también se transmite intergeneracionalmente conceptos, categorías de pensamiento y formas de entender el mundo."
         },
         {
-          termino: "Hipótesis Sapir-Whorf",
+          termino: "Hipótesis SapirWhorf",
           definicion: "Teoría que sugiere que la estructura del lenguaje que una persona habla influye en la manera en que esa persona percibe y conceptualiza el mundo."
         },
         {

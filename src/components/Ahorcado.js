@@ -20,6 +20,7 @@ const Ahorcado = ({ temaId, onVolver }) => {
   const [palabrasJugadas, setPalabrasJugadas] = useState(0);
   const [victoriasConsecutivas, setVictoriasConsecutivas] = useState(0);
   const [pistaMostrada, setPistaMostrada] = useState(false);
+  const [confetiMostrado, setConfetiMostrado] = useState(false);
 
   const seleccionarNuevaPalabra = useCallback(() => {
     const conceptos = temasData[temaId]?.conceptosClave || [];
@@ -30,7 +31,7 @@ const Ahorcado = ({ temaId, onVolver }) => {
       setJuegoTerminado(false);
       setVictoria(false);
       setPistaMostrada(false);
-      setIntentosRestantes(MAXIMO_INTENTOS);
+      // No reseteamos los intentos aquí
     } else {
       console.error('No hay conceptos disponibles para este tema');
       onVolver();
@@ -40,34 +41,39 @@ const Ahorcado = ({ temaId, onVolver }) => {
   useEffect(() => {
     if (!mostrarInstrucciones) {
       seleccionarNuevaPalabra();
+      setIntentosRestantes(MAXIMO_INTENTOS); // Reseteamos los intentos solo al inicio
     }
   }, [mostrarInstrucciones, seleccionarNuevaPalabra]);
 
   const normalizarLetra = (letra) => {
-    return letra.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    return letra.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   };
-
+  
   const manejarLetraSeleccionada = (letra) => {
     if (juegoTerminado || !palabraActual.termino) return;
 
-    const letraNormalizada = normalizarLetra(letra.toLowerCase());
+    const letraNormalizada = normalizarLetra(letra);
     if (!letrasAdivinadas.includes(letraNormalizada)) {
-      setLetrasAdivinadas([...letrasAdivinadas, letraNormalizada]);
+      const nuevasLetrasAdivinadas = [...letrasAdivinadas, letraNormalizada];
+      setLetrasAdivinadas(nuevasLetrasAdivinadas);
 
-      if (!normalizarLetra(palabraActual.termino.toLowerCase()).includes(letraNormalizada)) {
-        setIntentosRestantes(intentosRestantes - 1);
+      if (!normalizarLetra(palabraActual.termino).includes(letraNormalizada)) {
+        const nuevosIntentosRestantes = intentosRestantes - 1;
+        setIntentosRestantes(nuevosIntentosRestantes);
+        verificarEstadoJuego(nuevasLetrasAdivinadas, nuevosIntentosRestantes);
+      } else {
+        verificarEstadoJuego(nuevasLetrasAdivinadas, intentosRestantes);
       }
-
-      verificarEstadoJuego(letraNormalizada);
     }
   };
 
-  const verificarEstadoJuego = (nuevaLetra) => {
+  const verificarEstadoJuego = (letrasAdivinadas, intentosRestantes) => {
     if (!palabraActual.termino) return;
 
-    const todasLetrasAdivinadas = normalizarLetra(palabraActual.termino.toLowerCase())
-      .split('')
-      .every(letra => letra === ' ' || letra === ',' || [...letrasAdivinadas, nuevaLetra].includes(letra));
+    const palabraNormalizada = normalizarLetra(palabraActual.termino);
+    const todasLetrasAdivinadas = palabraNormalizada.split('').every(letra => 
+      letra === ' ' || letra === ',' || letrasAdivinadas.includes(letra)
+    );
 
     if (todasLetrasAdivinadas) {
       setJuegoTerminado(true);
@@ -75,10 +81,11 @@ const Ahorcado = ({ temaId, onVolver }) => {
       const nuevasVictoriasConsecutivas = victoriasConsecutivas + 1;
       setVictoriasConsecutivas(nuevasVictoriasConsecutivas);
       setPalabrasJugadas(palabrasJugadas + 1);
-      if (nuevasVictoriasConsecutivas >= VICTORIAS_PARA_CONFETI) {
+      if (nuevasVictoriasConsecutivas >= VICTORIAS_PARA_CONFETI && !confetiMostrado) {
         setMostrarConfeti(true);
+        setConfetiMostrado(true);
       }
-    } else if (intentosRestantes <= 1) {
+    } else if (intentosRestantes === 0) {
       setJuegoTerminado(true);
       setVictoria(false);
       setVictoriasConsecutivas(0);
@@ -89,6 +96,15 @@ const Ahorcado = ({ temaId, onVolver }) => {
   const continuarJugando = () => {
     seleccionarNuevaPalabra();
     setMostrarConfeti(false);
+    // No reseteamos los intentos aquí
+  };
+
+  const resetearJuego = () => {
+    setIntentosRestantes(MAXIMO_INTENTOS);
+    setVictoriasConsecutivas(0);
+    setPalabrasJugadas(0);
+    setConfetiMostrado(false);
+    seleccionarNuevaPalabra();
   };
 
   const mostrarPista = () => {
@@ -100,14 +116,14 @@ const Ahorcado = ({ temaId, onVolver }) => {
 
   const renderPalabra = () => {
     if (!palabraActual.termino) return null;
-
+  
     return (
       <div className="flex flex-wrap justify-center max-w-full overflow-hidden">
         {palabraActual.termino.split('').map((letra, index) => (
           <span key={index} className="text-lg sm:text-xl md:text-2xl font-bold mx-0.5 sm:mx-1 mb-1">
             {letra === ' ' ? '\u00A0' :
              letra === ',' ? ',' :
-             letrasAdivinadas.includes(normalizarLetra(letra.toLowerCase())) ? letra : '_'}
+             letrasAdivinadas.includes(normalizarLetra(letra)) ? letra : '_'}
           </span>
         ))}
       </div>
@@ -201,6 +217,12 @@ const Ahorcado = ({ temaId, onVolver }) => {
                 className="w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white text-base sm:text-lg px-4 sm:px-6 py-2 sm:py-3 transform hover:scale-105 transition-transform"
               >
                 Seguir jugando
+              </Button>
+              <Button 
+                onClick={resetearJuego} 
+                className="w-full sm:w-auto bg-sociologia-500 hover:bg-sociologia-600 text-white"
+              >
+                Reiniciar juego
               </Button>
               <Button 
                 onClick={onVolver} 
