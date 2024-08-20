@@ -31,7 +31,7 @@ const TemaCard = ({ tema, index, onClick }) => {
         </CardHeader>
         <CardContent className="relative z-20">
           <p className="text-lg font-semibold mb-4 drop-shadow-lg">{tema.subtitulo}</p>
-          <p className="text-sm drop-shadow-lg">Explora las actividades de repaso relacionadas con este tema.</p>
+          
         </CardContent>
       </Card>
     </motion.div>

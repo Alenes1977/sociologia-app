@@ -26,6 +26,77 @@ export const temasData = {
           ]
         }
       ],
+      videosEducativos: [
+        {
+          id: 'video1',
+          titulo: 'La perspectiva relacional en Sociología',
+          url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=143f7507-bb43-4f3c-bf14-b1d201314863',
+          tipo: 'panopto',
+          thumbnail: 'Thumbnail_1-1.png'
+        },
+        {
+          id: 'video2',
+          titulo: 'La triple semántica de "lo social"',
+          url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=060a3208-bb9b-4356-9f70-b1d201349c33',
+          tipo: 'panopto',
+          thumbnail: 'Thumbnail_1-2.png'
+        },
+        {
+          id: 'video3',
+          titulo: 'Principales enfoques sociológicos',
+          url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7a2bd48c-110e-4c2b-a89e-ac28013f5e40',
+          tipo: 'panopto',
+          thumbnail: 'Thumbnail_1-3.jpg'
+        },
+        {
+          id: 'video4',
+          titulo: '¿Qué nos diferencia de los animales?',
+          url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d7c5734f-5ccd-4842-923e-af8501197341',
+          tipo: 'panopto',
+          thumbnail: 'Thumbnail_1-4.jpg'
+        },
+        {
+          id: 'video5',
+          titulo: '¿Somos seres realmente sociables?',
+          url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c3145839-49ff-42af-900e-af8501198936',
+          tipo: 'panopto',
+          thumbnail: 'Thumbnail_1-5.jpg'
+        },
+        //Para utilizar youtube
+        //{
+        //  id: 'video2',
+        //  titulo: 'La triple semántica de "lo social"',
+        //  url: 'https://www.youtube.com/watch?v=2a1S4qBvlOg',
+        //  tipo: 'youtube',
+        //  thumbnail: 'Thumbnail_1-1.jpg'
+        //},
+
+        //Para utilizar tu propio servidor
+        //{
+        //  id: 'video2',
+        //  titulo: 'La triple semántica de "lo social"',
+        //  url: 'https://aprendizajeconia.com/sociologiaUNAV/Alex_IA.mp4',
+        //  tipo: 'servidor',
+        //  thumbnail: 'Thumbnail_1-1.jpg'
+        //},
+      ],
+      mapasMentales: [
+        {
+          id: 'sociologia',
+          titulo: '¿Qué es la sociología?',
+          url: 'https://aprendizajeconia.com/sociologiaUNAV/sociologia.html'
+        },
+        {
+          id: 'condicionsociocultural',
+          titulo: 'Condición sociocultural del ser humano',
+          url: 'https://aprendizajeconia.com/sociologiaUNAV/condicionsociocultural.html'
+        },
+        {
+          id: 'perspectivarelacional',
+          titulo: 'La perspectiva relacional en la sociología',
+          url: 'https://aprendizajeconia.com/sociologiaUNAV/perspectivarelacional.html'
+        }
+      ],
       conceptosClave: [
         {
           termino: "Estudios macro sociológicos",
@@ -1520,6 +1591,34 @@ export const temasData = {
             "Una mirada ampliada: peculiaridades de la naturaleza humana"
           ]
         }
+      ],
+      videosEducativos: [
+        {
+          id: 'video1',
+          titulo: 'Concepto y sentidos de "cultura"',
+          url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=af80e708-70aa-4bcd-bf07-ac380070af9b',
+          tipo: 'panopto',
+          thumbnail: 'Thumbnail_2-1.jpg'
+        },
+        {
+          id: 'video2',
+          titulo: 'Componentes de la cultura',
+          url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0c04b2f6-9e64-4b33-bd52-ac380070afc6',
+          tipo: 'panopto',
+          thumbnail: 'Thumbnail_2-2.jpg'
+        },
+      ],
+      mapasMentales: [
+        {
+          id: 'culturadiversidad',
+          titulo: 'Mapatema2',
+          url: 'https://aprendizajeconia.com/sociologiaUNAV/sociologia.html'
+        },
+        {
+          id: 'otro',
+          titulo: 'otro mapa para Tema2',
+          url: 'https://aprendizajeconia.com/sociologiaUNAV/condicionsociocultural.html'
+        },
       ],
       conceptosClave: [
         {
