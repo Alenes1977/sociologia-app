@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { temasData } from '../dataTemas';
 import Confetti from 'react-confetti';
-import { HelpCircle, Lightbulb } from 'lucide-react';
+import { HelpCircle, Lightbulb, ArrowLeft } from 'lucide-react';
 
 const MAXIMO_INTENTOS = 6;
 const VICTORIAS_PARA_CONFETI = 3;
@@ -150,9 +150,18 @@ const Ahorcado = ({ temaId, onVolver }) => {
   };
 
   const renderInstrucciones = () => (
-    <Card className="mb-4">
+    <Card className="mb-4 relative">
+      <div className="absolute top-4 right-4">
+        <Button 
+          onClick={onVolver}
+          variant="outline" 
+          className="border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+        >
+          <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
+        </Button>
+      </div>
       <CardHeader>
-        <CardTitle className="flex items-center text-xl sm:text-2xl font-bold text-sociologia-700">
+        <CardTitle className="flex items-center text-xl sm:text-2xl font-bold text-sociologia-700 mt-12">
           <HelpCircle className="mr-2" />
           Instrucciones del Ahorcado
         </CardTitle>
@@ -168,9 +177,9 @@ const Ahorcado = ({ temaId, onVolver }) => {
         </ol>
         <Button 
           onClick={() => setMostrarInstrucciones(false)} 
-          className="mt-4 sm:mt-6 w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white"
+          className="mt-6 bg-sociologia-600 hover:bg-sociologia-700 text-white text-lg px-6 py-3 w-full sm:w-auto"
         >
-          Comenzar
+          Comenzar juego
         </Button>
       </CardContent>
     </Card>
@@ -185,73 +194,84 @@ const Ahorcado = ({ temaId, onVolver }) => {
   }
 
   return (
-    <Card className="w-full max-w-4xl mx-auto">
-      {mostrarConfeti && <Confetti recycle={false} numberOfPieces={200} />}
-      <CardHeader>
-        <CardTitle className="text-xl sm:text-2xl font-bold text-sociologia-700">
-          Juego del Ahorcado
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="text-center mb-4 sm:mb-6">
-          <p className="text-base sm:text-lg mb-1 sm:mb-2">Intentos restantes: {intentosRestantes}</p>
-          <p className="text-base sm:text-lg">Victorias consecutivas: {victoriasConsecutivas}</p>
-        </div>
-        <div className="text-center mb-4 sm:mb-6 px-2">
-          {renderPalabra()}
-        </div>
-        {juegoTerminado ? (
-          <div className="text-center">
-            <h3 className={`text-xl sm:text-2xl font-bold ${victoria ? 'text-green-600' : 'text-red-600'} mb-2 sm:mb-4`}>
-              {victoria ? '¡Has ganado!' : 'Has perdido'}
-            </h3>
-            <p className="text-lg sm:text-xl mb-2 sm:mb-4">
-              La palabra era: <span className="font-bold">{palabraActual.termino}</span>
-            </p>
-            <p className="text-base sm:text-lg mb-4 sm:mb-6">
-              Definición: {palabraActual.definicion}
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-2">
-              <Button 
-                onClick={continuarJugando} 
-                className="w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white text-base sm:text-lg px-4 sm:px-6 py-2 sm:py-3 transform hover:scale-105 transition-transform"
-              >
-                Seguir jugando
-              </Button>
-              <Button 
-                onClick={resetearJuego} 
-                className="w-full sm:w-auto bg-sociologia-500 hover:bg-sociologia-600 text-white"
-              >
-                Reiniciar juego
-              </Button>
-              <Button 
-                onClick={onVolver} 
-                className="w-full sm:w-auto bg-gray-400 hover:bg-gray-500 text-white"
-              >
-                Volver a las actividades
-              </Button>
-            </div>
+    <div className="w-full max-w-4xl mx-auto">
+      <div className="flex justify-end mb-4">
+        <Button 
+          onClick={onVolver} 
+          variant="outline" 
+          className="border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+        >
+          <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
+        </Button>
+      </div>
+      <Card>
+        {mostrarConfeti && <Confetti recycle={false} numberOfPieces={200} />}
+        <CardHeader>
+          <CardTitle className="text-xl sm:text-2xl font-bold text-sociologia-700">
+            Juego del Ahorcado
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="text-center mb-4 sm:mb-6">
+            <p className="text-base sm:text-lg mb-1 sm:mb-2">Intentos restantes: {intentosRestantes}</p>
+            <p className="text-base sm:text-lg">Victorias consecutivas: {victoriasConsecutivas}</p>
           </div>
-        ) : (
-          <>
-            {renderTeclado()}
-            <div className="mt-4 text-center">
-              <Button 
-                onClick={mostrarPista} 
-                disabled={pistaMostrada || intentosRestantes <= COSTO_PISTA}
-                className="w-full sm:w-auto bg-yellow-500 hover:bg-yellow-600 text-white text-sm sm:text-base"
-              >
-                <Lightbulb className="mr-2" />
-                Pedir pista (-{COSTO_PISTA} intentos)
-              </Button>
-              {pistaMostrada && (
-                <p className="mt-2 text-sm sm:text-base text-sociologia-600">Pista: {palabraActual.definicion}</p>
-              )}
+          <div className="text-center mb-4 sm:mb-6 px-2">
+            {renderPalabra()}
+          </div>
+          {juegoTerminado ? (
+            <div className="text-center">
+              <h3 className={`text-xl sm:text-2xl font-bold ${victoria ? 'text-green-600' : 'text-red-600'} mb-2 sm:mb-4`}>
+                {victoria ? '¡Has ganado!' : 'Has perdido'}
+              </h3>
+              <p className="text-lg sm:text-xl mb-2 sm:mb-4">
+                La palabra era: <span className="font-bold">{palabraActual.termino}</span>
+              </p>
+              <p className="text-base sm:text-lg mb-4 sm:mb-6">
+                Definición: {palabraActual.definicion}
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-2">
+                <Button 
+                  onClick={continuarJugando} 
+                  className="w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white text-base sm:text-lg px-4 sm:px-6 py-2 sm:py-3 transform hover:scale-105 transition-transform"
+                >
+                  Seguir jugando
+                </Button>
+                <Button 
+                  onClick={resetearJuego} 
+                  className="w-full sm:w-auto bg-sociologia-500 hover:bg-sociologia-600 text-white"
+                >
+                  Reiniciar juego
+                </Button>
+                <Button 
+                  onClick={onVolver} 
+                  className="w-full sm:w-auto bg-gray-400 hover:bg-gray-500 text-white"
+                >
+                  Volver a las actividades
+                </Button>
+              </div>
             </div>
-          </>
-        )}
-      </CardContent>
-    </Card>
+          ) : (
+            <>
+              {renderTeclado()}
+              <div className="mt-4 text-center">
+                <Button 
+                  onClick={mostrarPista} 
+                  disabled={pistaMostrada || intentosRestantes <= COSTO_PISTA}
+                  className="w-full sm:w-auto bg-yellow-500 hover:bg-yellow-600 text-white text-sm sm:text-base"
+                >
+                  <Lightbulb className="mr-2" />
+                  Pedir pista (-{COSTO_PISTA} intentos)
+                </Button>
+                {pistaMostrada && (
+                  <p className="mt-2 text-sm sm:text-base text-sociologia-600">Pista: {palabraActual.definicion}</p>
+                )}
+              </div>
+            </>
+          )}
+        </CardContent>
+      </Card>
+    </div>
   );
 };
 

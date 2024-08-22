@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Slider } from "./ui/slider";
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, HelpCircle, Settings } from 'lucide-react';
+import { ArrowRight, HelpCircle, Settings, ArrowLeft } from 'lucide-react';
 import Confetti from 'react-confetti';
 import {
   Dialog,
@@ -122,9 +122,18 @@ const JuegoAsociacion = ({ temaId, onVolver }) => {
   };
 
   const renderInstrucciones = () => (
-    <Card className="mb-4">
+    <Card className="mb-4 relative">
+      <div className="absolute top-4 right-4">
+        <Button 
+          onClick={onVolver}
+          variant="outline" 
+          className="border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+        >
+          <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
+        </Button>
+      </div>
       <CardHeader>
-        <CardTitle className="flex items-center text-xl sm:text-2xl font-bold text-sociologia-700">
+        <CardTitle className="flex items-center text-2xl font-bold text-sociologia-700 mt-12">
           <HelpCircle className="mr-2" />
           Instrucciones del Juego
         </CardTitle>
@@ -132,8 +141,8 @@ const JuegoAsociacion = ({ temaId, onVolver }) => {
       <CardContent>
         <div className="mb-4 sm:mb-6">
           <ol className="list-decimal list-inside space-y-1 sm:space-y-2 text-sm sm:text-base text-sociologia-600">
-            <li>Haz clic en un concepto de la columna izquierda.</li>
-            <li>Luego, haz clic en el concepto correspondiente de la columna derecha.</li>
+            <li>Haz clic en un concepto de la primera columna de conceptos.</li>
+            <li>Luego, haz clic en el concepto correspondiente de la segunda columna.</li>
             <li>Si los conceptos coinciden, se marcarán como completados.</li>
             <li>Si no coinciden, se contará como un intento fallido.</li>
             <li>Continúa hasta asociar todos los conceptos correctamente.</li>
@@ -226,8 +235,12 @@ const JuegoAsociacion = ({ temaId, onVolver }) => {
               <Button onClick={resetJuego} className="bg-sociologia-600 hover:bg-sociologia-700 text-white w-full sm:w-auto">
                 Jugar de nuevo
               </Button>
-              <Button onClick={onVolver} className="bg-sociologia-600 hover:bg-sociologia-700 text-white w-full sm:w-auto">
-                Volver a las actividades
+              <Button 
+                onClick={onVolver} 
+                variant="outline" 
+                className="w-full sm:w-auto border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+              >
+                <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
               </Button>
             </div>
           </CardContent>
@@ -272,9 +285,13 @@ const JuegoAsociacion = ({ temaId, onVolver }) => {
                 </div>
               </div>
               <div className="mt-4 sm:mt-6 flex justify-center">
-                <Button onClick={onVolver} className="bg-sociologia-600 hover:bg-sociologia-700 text-white w-full sm:w-auto">
-                  Volver a las actividades
-                </Button>
+              <Button 
+                onClick={onVolver} 
+                variant="outline" 
+                className="w-full text-left justify-start sm:w-auto border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+              >
+                <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
+              </Button>
               </div>
             </>
           )}

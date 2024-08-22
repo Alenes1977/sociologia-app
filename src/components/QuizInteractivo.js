@@ -3,7 +3,7 @@ import { temasData } from '../dataTemas';
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Slider } from "./ui/slider";
-import { CheckCircle, XCircle, HelpCircle, Settings } from 'lucide-react';
+import { CheckCircle, XCircle, HelpCircle, Settings, ArrowLeft } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Confetti from 'react-confetti';
 
@@ -119,7 +119,6 @@ const QuizInteractivo = ({ temaId, onVolver }) => {
     </motion.div>
   );
 
-
   const renderReviewQuestion = (question, index) => {
     const userAnswer = userAnswers[index];
     const isCorrect = userAnswer === question.respuestaCorrecta;
@@ -169,9 +168,18 @@ const QuizInteractivo = ({ temaId, onVolver }) => {
   };
 
   const renderInstrucciones = () => (
-    <Card className="mb-4">
+    <Card className="mb-4 relative">
+      <div className="absolute top-4 right-4">
+        <Button 
+          onClick={onVolver}
+          variant="outline" 
+          className="border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+        >
+          <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
+        </Button>
+      </div>
       <CardHeader>
-        <CardTitle className="flex items-center text-2xl font-bold text-sociologia-700">
+        <CardTitle className="flex items-center text-2xl font-bold text-sociologia-700 mt-12">
           <HelpCircle className="mr-2" />
           Instrucciones del Quiz
         </CardTitle>
@@ -250,49 +258,56 @@ const QuizInteractivo = ({ temaId, onVolver }) => {
           </p>
           <div className="flex flex-col sm:flex-row w-full sm:w-auto space-y-2 sm:space-y-0 sm:space-x-4">
             <Button 
-              onClick={onVolver} 
-              variant="default" 
-              className="w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white px-6 py-2"
-            >
-              Volver a las actividades
-            </Button>
-            <Button 
               onClick={resetQuiz} 
-              variant="default" 
               className="w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white px-6 py-2"
             >
               Reiniciar Quiz
+            </Button>
+            <Button 
+              onClick={onVolver} 
+              variant="outline" 
+              className="w-full sm:w-auto border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+            >
+              <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
             </Button>
           </div>
         </div>
         {shuffledQuestions.map((question, index) => renderReviewQuestion(question, index))}
         <div className="mt-8 flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4">
           <Button 
-            onClick={onVolver} 
-            variant="default" 
-            className="w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white px-6 py-2"
-          >
-            Volver a las actividades
-          </Button>
-          <Button 
             onClick={resetQuiz} 
-            variant="default" 
             className="w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white px-6 py-2"
           >
             Reiniciar Quiz
           </Button>
+          <Button 
+            onClick={onVolver} 
+            variant="outline" 
+            className="w-full sm:w-auto border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
+          </Button>
+          
         </div>
       </div>
     );
   }
+
   if (shuffledQuestions.length === 0) {
     return <div>Cargando preguntas...</div>;
   }
 
   return (
     <Card className="w-full max-w-2xl mx-auto">
-      <CardHeader>
-        <CardTitle className="text-lg sm:text-xl md:text-2xl">Quiz: {temaData.titulo}</CardTitle>
+      <CardHeader className="flex flex-row justify-between items-center">
+        <CardTitle className="text-lg sm:text-xl md:text-2xl">Quiz: {temasData[temaId].titulo}</CardTitle>
+        <Button 
+          onClick={onVolver}
+          variant="outline" 
+          className="border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+        >
+          <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
+        </Button>
       </CardHeader>
       <CardContent>
         <div className="mb-4 flex justify-between items-center">

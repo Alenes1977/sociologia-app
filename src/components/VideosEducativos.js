@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
-import { HelpCircle, X } from 'lucide-react';
+import { HelpCircle, X, ArrowLeft } from 'lucide-react';
 import { temasData } from '../dataTemas';
 
-const VideosEducativos = ({ temaId }) => {
+const VideosEducativos = ({ temaId, onVolver }) => {
   const [mostrarInstrucciones, setMostrarInstrucciones] = useState(true);
   const [videoSeleccionado, setVideoSeleccionado] = useState(null);
   const [videosDelTema, setVideosDelTema] = useState([]);
@@ -29,11 +29,7 @@ const VideosEducativos = ({ temaId }) => {
       <CardContent>
         <ul className="list-disc list-inside space-y-2 text-sociologia-600">
           <li>Estos vídeos educativos están diseñados para complementar tu aprendizaje sobre los conceptos clave de este tema.</li>
-          <li>Cada tarjeta muestra una miniatura del vídeo para darte una idea de su contenido.</li>
-          <li>Haz clic en "Ver Vídeo" para reproducir el vídeo directamente en esta página.</li>
-          <li>Los vídeos se reproducirán automáticamente al abrirlos.</li>
           <li>Puedes pausar, reiniciar o ajustar el volumen del vídeo según tus necesidades.</li>
-          <li>Usa la función de búsqueda para encontrar contenido específico dentro del vídeo.</li>
           <li>Toma notas mientras ves los vídeos para reforzar tu comprensión del tema.</li>
           <li>Puedes cerrar el vídeo en cualquier momento para volver a la lista de vídeos disponibles.</li>
         </ul>
@@ -124,6 +120,16 @@ const VideosEducativos = ({ temaId }) => {
 
   return (
     <div>
+      <div className="flex justify-end mb-4">
+        <Button 
+            onClick={onVolver} 
+            variant="outline" 
+            className="w-full sm:w-auto border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
+        </Button>
+      </div>
+
       {mostrarInstrucciones && renderInstrucciones()}
       {videosDelTema.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -154,6 +160,16 @@ const VideosEducativos = ({ temaId }) => {
         <p className="text-center text-sociologia-600">No hay vídeos educativos disponibles para este tema.</p>
       )}
       {videoSeleccionado && renderVideoSeleccionado()}
+
+      <div className="flex justify-end mt-6">
+        <Button 
+            onClick={onVolver} 
+            variant="outline" 
+            className="w-full sm:w-auto border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
+        </Button>
+      </div>
     </div>
   );
 };

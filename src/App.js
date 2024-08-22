@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
 import { Button } from "./components/ui/button";
+import { ArrowLeft } from 'lucide-react';
 import QuizInteractivo from './components/QuizInteractivo';
 import Flashcards from './components/Flashcards';
 import JuegoAsociacion from './components/JuegoAsociacion';
@@ -32,16 +33,16 @@ const actividadesIconos = {
 
 const actividades = {
   contenidosEducativos: [
-    { id: 'videosEducativos', nombre: "Videos educativos", componente: VideosEducativos, descripcion: "Visualiza los vídeos educativos sobre el tema", color: "from-blue-400 to-blue-600", imagen: "/images/videos.webp" },
-    { id: 'mapasMentales', nombre: "Mapas Mentales", componente: MapasMentales, descripcion: "Visualiza mapas conceptuales interactivos", color: "from-green-400 to-green-600", imagen: "/images/mapamental.webp" },
+    { id: 'videosEducativos', nombre: "Videos educativos", componente: VideosEducativos, descripcion: "Visualiza los vídeos educativos sobre el tema", color: "from-gray-400 to-gray-600", imagen: "/images/videos.webp" },
+    { id: 'mapasMentales', nombre: "Mapas Mentales", componente: MapasMentales, descripcion: "Visualiza mapas conceptuales interactivos", color: "from-gray-400 to-gray-600", imagen: "/images/mapamental.webp" },
   ],
   recursosAprendizaje: [
-    { id: 'quiz', nombre: "Quiz interactivo", componente: QuizInteractivo, descripcion: "Pon a prueba tus conocimientos", color: "from-yellow-400 to-yellow-600", imagen: "/images/actividad1.webp" },
-    { id: 'flashcards', nombre: "Flashcards", componente: Flashcards, descripcion: "Repasa conceptos clave", color: "from-red-400 to-red-600", imagen: "/images/actividad2.webp" },
-    { id: 'asociacion', nombre: "Asociación de conceptos", componente: JuegoAsociacion, descripcion: "Conecta conceptos relacionados", color: "from-indigo-400 to-indigo-600", imagen: "/images/actividad3.webp" },
-    { id: 'cascada', nombre: "Cascada de preguntas", componente: PreguntasCascada, descripcion: "Avanza por el torrente y gana", color: "from-pink-400 to-pink-600", imagen: "/images/actividad4.webp" },
-    { id: 'sopaletras', nombre: "Sopa de letras", componente: SopaLetras, descripcion: "Encuentra palabras ocultas", color: "from-purple-400 to-purple-600", imagen: "/images/actividad5.webp" },
-    { id: 'ahorcado', nombre: "Ahorcado", componente: Ahorcado, descripcion: "Adivina la palabra oculta", color: "from-teal-400 to-teal-600", imagen: "/images/actividad6.webp" },
+    { id: 'quiz', nombre: "Quiz interactivo", componente: QuizInteractivo, descripcion: "Pon a prueba tus conocimientos", color: "from-blue-400 to-blue-600", imagen: "/images/actividad1.webp" },
+    { id: 'flashcards', nombre: "Flashcards", componente: Flashcards, descripcion: "Repasa conceptos clave", color: "from-green-400 to-green-600", imagen: "/images/actividad2.webp" },
+    { id: 'asociacion', nombre: "Asociación de conceptos", componente: JuegoAsociacion, descripcion: "Conecta conceptos relacionados", color: "from-pink-400 to-pink-600", imagen: "/images/actividad3.webp" },
+    { id: 'cascada', nombre: "Cascada de preguntas", componente: PreguntasCascada, descripcion: "Avanza por el torrente y gana", color: "from-yellow-400 to-yellow-600", imagen: "/images/actividad4.webp" },
+    { id: 'sopaletras', nombre: "Sopa de letras", componente: SopaLetras, descripcion: "Encuentra palabras ocultas", color: "from-teal-400 to-teal-600", imagen: "/images/actividad5.webp" },
+    { id: 'ahorcado', nombre: "Ahorcado", componente: Ahorcado, descripcion: "Adivina la palabra oculta", color: "from-purple-400 to-purple-600", imagen: "/images/actividad6.webp" },
     { id: 'completarFrase', nombre: "Completar la frase", componente: CompletarFrase, descripcion: "Completa las frases con la palabra correcta", color: "from-orange-400 to-orange-600", imagen: "/images/actividad7.webp" },
   ],
   certificaAprendizaje: [
@@ -157,7 +158,15 @@ const App = () => {
           {renderActividadesSection("Contenidos educativos", actividades.contenidosEducativos)}
           {renderActividadesSection("Recursos de aprendizaje", actividades.recursosAprendizaje)}
           {renderActividadesSection("Certifica tu aprendizaje", actividades.certificaAprendizaje)}
-          <Button onClick={volverAlInicio} className="mt-8 bg-sociologia-600 hover:bg-sociologia-700">Volver a la selección de temas</Button>
+          <div className="flex justify-end mt-8">
+            <Button 
+              onClick={volverAlInicio} 
+              variant="outline"
+              className="border-sociologia-400 bg-sociologia-600 hover:bg-sociologia-700 text-white hover:text-white transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+            >
+              <ArrowLeft className="mr-2 h-4 w-4" /> Volver a la selección de temas
+            </Button>
+          </div>
         </div>
       );
     }

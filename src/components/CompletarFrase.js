@@ -5,7 +5,7 @@ import { Slider } from "./ui/slider";
 import { Input } from "./ui/input";
 import { temasData } from '../dataTemas';
 import Confetti from 'react-confetti';
-import { HelpCircle, Clock, Lightbulb, Send } from 'lucide-react';
+import { HelpCircle, Clock, Lightbulb, Send, ArrowLeft } from 'lucide-react';
 
 const TIEMPO_POR_PREGUNTA = 15; // segundos
 const TIEMPO_REDUCCION_PISTA = 5; // segundos
@@ -23,6 +23,19 @@ const CompletarFrase = ({ temaId, onVolver }) => {
   const [numFrases, setNumFrases] = useState(MIN_FRASES);
   const [mostrarOpciones, setMostrarOpciones] = useState(false);
   const [respuestaUsuario, setRespuestaUsuario] = useState('');
+  const [dimensionesVentana, setDimensionesVentana] = useState({ 
+    width: window.innerWidth, 
+    height: window.innerHeight 
+  });
+
+  useEffect(() => {
+    const manejarRedimensionVentana = () => {
+      setDimensionesVentana({ width: window.innerWidth, height: window.innerHeight });
+    };
+
+    window.addEventListener('resize', manejarRedimensionVentana);
+    return () => window.removeEventListener('resize', manejarRedimensionVentana);
+  }, []);
 
   const iniciarJuego = useCallback(() => {
     const frasesDisponibles = temasData[temaId]?.completarFrase || [];
@@ -149,9 +162,18 @@ const CompletarFrase = ({ temaId, onVolver }) => {
   };
 
   const renderInstrucciones = () => (
-    <Card className="mb-4">
+    <Card className="mb-4 relative">
+      <div className="absolute top-4 right-4">
+        <Button 
+          onClick={onVolver}
+          variant="outline" 
+          className="border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+        >
+          <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
+        </Button>
+      </div>
       <CardHeader>
-        <CardTitle className="flex items-center text-2xl font-bold text-sociologia-700">
+        <CardTitle className="flex items-center text-xl sm:text-2xl font-bold text-sociologia-700 mt-12">
           <HelpCircle className="mr-2" />
           Instrucciones para "Completar la frase"
         </CardTitle>
@@ -188,7 +210,7 @@ const CompletarFrase = ({ temaId, onVolver }) => {
         <div className="mt-6 flex justify-end">
           <Button 
             onClick={() => setMostrarInstrucciones(false)} 
-            className="bg-sociologia-600 hover:bg-sociologia-700 text-white px-6 py-2 text-lg"
+            className="bg-sociologia-600 hover:bg-sociologia-700 text-white text-lg px-6 py-3"
           >
             Comenzar
           </Button>
@@ -204,7 +226,7 @@ const CompletarFrase = ({ temaId, onVolver }) => {
   if (juegoTerminado) {
     return (
       <Card className="w-full max-w-4xl mx-auto">
-        {mostrarConfeti && <Confetti recycle={false} numberOfPieces={200} />}
+        {mostrarConfeti && <Confetti recycle={false} numberOfPieces={200} width={dimensionesVentana.width} height={dimensionesVentana.height} />}
         <CardHeader>
           <CardTitle className="text-xl sm:text-2xl font-bold text-sociologia-700">
             Resumen del Juego
@@ -230,8 +252,12 @@ const CompletarFrase = ({ temaId, onVolver }) => {
             <Button onClick={iniciarJuego} className="w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white">
               Jugar de nuevo
             </Button>
-            <Button onClick={onVolver} className="w-full sm:w-auto bg-gray-400 hover:bg-gray-500 text-white">
-              Volver a las actividades
+            <Button 
+              onClick={onVolver} 
+              variant="outline" 
+              className="w-full sm:w-auto border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+            >
+              <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
             </Button>
           </div>
         </CardContent>
@@ -240,29 +266,40 @@ const CompletarFrase = ({ temaId, onVolver }) => {
   }
 
   return (
-    <Card className="w-full max-w-4xl mx-auto">
-      <CardHeader>
-        <CardTitle className="text-2xl font-bold text-sociologia-700 flex justify-between items-center">
-          <span>Completar Frase</span>
-          <span className="text-xl flex items-center">
-            <Clock className="mr-2" />
-            {tiempoRestante}s
-          </span>
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="mb-4">
-          <p className="text-lg">Frase {fraseActual + 1} de {frases.length}</p>
-          <div className="w-full bg-gray-200 rounded-full h-2.5">
-            <div
-              className="bg-sociologia-600 h-2.5 rounded-full"
-              style={{ width: `${((fraseActual + 1) / frases.length) * 100}%` }}
-            ></div>
+    <div className="w-full max-w-4xl mx-auto">
+      <div className="flex justify-end mb-4">
+        <Button 
+          onClick={onVolver} 
+          variant="outline" 
+          className="border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+        >
+          <ArrowLeft className="mr-2 h-4 w-4" /> Abandonar prueba
+        </Button>
+      </div>
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold text-sociologia-700 flex justify-between items-center">
+            <span>Completar Frase</span>
+            <span className="text-xl flex items-center">
+              <Clock className="mr-2" />
+              {tiempoRestante}s
+            </span>
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="mb-4">
+            <p className="text-lg">Frase {fraseActual + 1} de {frases.length}</p>
+            <div className="w-full bg-gray-200 rounded-full h-2.5">
+              <div
+                className="bg-sociologia-600 h-2.5 rounded-full"
+                style={{ width: `${((fraseActual + 1) / frases.length) * 100}%` }}
+              ></div>
+            </div>
           </div>
-        </div>
-        {renderFrase()}
-      </CardContent>
-    </Card>
+          {renderFrase()}
+        </CardContent>
+      </Card>
+    </div>
   );
 };
 

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
-import { HelpCircle, X } from 'lucide-react';
+import { HelpCircle, X, ArrowLeft } from 'lucide-react';
 import { temasData } from '../dataTemas';
 
-const MapasMentales = ({ temaId }) => {
+const MapasMentales = ({ temaId, onVolver }) => {
   const [mostrarInstrucciones, setMostrarInstrucciones] = useState(true);
   const [mapaSeleccionado, setMapaSeleccionado] = useState(null);
   const [mapasDelTema, setMapasDelTema] = useState([]);
@@ -30,8 +30,8 @@ const MapasMentales = ({ temaId }) => {
         <ul className="list-disc list-inside space-y-2 text-sociologia-600">
           <li>Estos mapas conceptuales interactivos están diseñados para ayudarte a repasar los contenidos fundamentales de este tema específico.</li>
           <li>Haz clic en "Ver Mapa Mental" para abrir el mapa directamente en esta página.</li>
-          <li>Utiliza estos mapas para visualizar las relaciones entre los conceptos clave y reforzar tu comprensión del tema.</li>
-          <li>Puedes cerrar el mapa en cualquier momento para volver a la lista de mapas disponibles.</li>
+          <li>Puedes hacer zoom para acercar o alejar el mapa mental, y moverlo libremente.</li>
+          <li>Pulsa en cualquiera de los nodos circulares para colapsar o desplegar los niveles inferiores del mapa.</li>
         </ul>
         <Button 
           onClick={() => setMostrarInstrucciones(false)} 
@@ -66,6 +66,16 @@ const MapasMentales = ({ temaId }) => {
 
   return (
     <div>
+      <div className="flex justify-end mb-4">
+        <Button 
+            onClick={onVolver} 
+            variant="outline" 
+            className="w-full sm:w-auto border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
+        </Button>
+      </div>
+
       {mostrarInstrucciones && renderInstrucciones()}
       {mapasDelTema.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -89,6 +99,16 @@ const MapasMentales = ({ temaId }) => {
         <p className="text-center text-sociologia-600">No hay mapas conceptuales disponibles para este tema.</p>
       )}
       {mapaSeleccionado && renderMapaSeleccionado()}
+
+      <div className="flex justify-end mt-6">
+        <Button 
+            onClick={onVolver} 
+            variant="outline" 
+            className="w-full sm:w-auto border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
+        </Button>
+      </div>
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { temasData } from '../dataTemas';
 import Confetti from 'react-confetti';
-import { HelpCircle, CheckCircle } from 'lucide-react';
+import { HelpCircle, CheckCircle, ArrowLeft } from 'lucide-react';
 
 const TestCertificacion = ({ temaId, onVolver }) => {
   const [preguntas, setPreguntas] = useState([]);
@@ -166,9 +166,18 @@ const TestCertificacion = ({ temaId, onVolver }) => {
   );
 
   const renderInstrucciones = () => (
-    <Card className="mb-4">
+    <Card className="mb-4 relative">
+      <div className="absolute top-4 right-4">
+        <Button 
+          onClick={onVolver}
+          variant="outline" 
+          className="border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+        >
+          <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
+        </Button>
+      </div>
       <CardHeader>
-        <CardTitle className="flex items-center text-xl sm:text-2xl font-bold text-sociologia-700">
+        <CardTitle className="flex items-center text-xl sm:text-2xl font-bold text-sociologia-700 mt-12">
           <HelpCircle className="mr-2" />
           Instrucciones del Test para Certificación
         </CardTitle>
@@ -183,7 +192,7 @@ const TestCertificacion = ({ temaId, onVolver }) => {
         </ol>
         <Button 
           onClick={() => setMostrarInstrucciones(false)} 
-          className="mt-6 w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white"
+          className="mt-6 w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white text-lg px-6 py-3"
         >
           Comenzar el test
         </Button>
@@ -191,42 +200,9 @@ const TestCertificacion = ({ temaId, onVolver }) => {
     </Card>
   );
 
-  const renderRevision = () => (
-    <Card>
-      <CardHeader>
-        <CardTitle className="text-xl sm:text-2xl">Revisión de Respuestas</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p className="mb-4 text-base sm:text-lg">Has acertado {puntuacion} de {preguntas.length} preguntas.</p>
-        {preguntas.map((pregunta, index) => {
-          const respuestaUsuario = respuestas[index];
-          const opcionUsuario = pregunta.opciones[respuestaUsuario];
-          const esCorrecta = opcionUsuario && opcionUsuario.esCorrecta;
-          return (
-            <div key={index} className="mb-4 p-4 border rounded">
-              <p className="font-bold text-sm sm:text-base">{pregunta.pregunta}</p>
-              <p className={`text-sm sm:text-base ${esCorrecta ? "text-green-600" : "text-red-600"}`}>
-                Tu respuesta: {opcionUsuario ? opcionUsuario.texto : 'No respondida'}
-              </p>
-              {!esCorrecta && (
-                <p className="text-sm sm:text-base text-green-600">
-                  Respuesta correcta: {pregunta.opciones.find(opcion => opcion.esCorrecta).texto}
-                </p>
-              )}
-            </div>
-          );
-        })}
-        <div className="flex flex-col sm:flex-row justify-between mt-6 space-y-2 sm:space-y-0">
-          <Button onClick={() => setMostrarRevision(false)} className="w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white">
-            Continuar
-          </Button>
-          <Button onClick={onVolver} className="w-full sm:w-auto bg-gray-400 hover:bg-gray-500 text-white">
-            Volver a las actividades
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
-  );
+  if (mostrarInstrucciones) {
+    return renderInstrucciones();
+  }
 
   if (cargando) {
     return <div>Cargando preguntas...</div>;
@@ -237,20 +213,59 @@ const TestCertificacion = ({ temaId, onVolver }) => {
       <Card>
         <CardContent>
           <p className="text-red-500">{error}</p>
-          <Button onClick={onVolver} className="mt-4 bg-sociologia-600 hover:bg-sociologia-700 text-white">
-            Volver a las actividades
+          <Button 
+            onClick={onVolver} 
+            variant="outline"
+            className="mt-4 border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
           </Button>
         </CardContent>
       </Card>
     );
   }
 
-  if (mostrarInstrucciones) {
-    return renderInstrucciones();
-  }
-
   if (mostrarRevision) {
-    return renderRevision();
+    return (
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-xl sm:text-2xl">Revisión de Respuestas</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="mb-4 text-base sm:text-lg">Has acertado {puntuacion} de {preguntas.length} preguntas.</p>
+          {preguntas.map((pregunta, index) => {
+            const respuestaUsuario = respuestas[index];
+            const opcionUsuario = pregunta.opciones[respuestaUsuario];
+            const esCorrecta = opcionUsuario && opcionUsuario.esCorrecta;
+            return (
+              <div key={index} className="mb-4 p-4 border rounded">
+                <p className="font-bold text-sm sm:text-base">{pregunta.pregunta}</p>
+                <p className={`text-sm sm:text-base ${esCorrecta ? "text-green-600" : "text-red-600"}`}>
+                  Tu respuesta: {opcionUsuario ? opcionUsuario.texto : 'No respondida'}
+                </p>
+                {!esCorrecta && (
+                  <p className="text-sm sm:text-base text-green-600">
+                    Respuesta correcta: {pregunta.opciones.find(opcion => opcion.esCorrecta).texto}
+                  </p>
+                )}
+              </div>
+            );
+          })}
+          <div className="flex flex-col sm:flex-row justify-between mt-6 space-y-2 sm:space-y-0">
+            <Button onClick={() => setMostrarRevision(false)} className="w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white">
+              Solicitar Certificado de resultados
+            </Button>
+            <Button 
+              onClick={onVolver} 
+              variant="outline"
+              className="w-full sm:w-auto border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+            >
+              <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+    );
   }
 
   if (testCompletado) {
@@ -299,10 +314,14 @@ const TestCertificacion = ({ temaId, onVolver }) => {
               {error && <p className="text-red-500 mb-4">{error}</p>}
               <div className="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0">
                 <Button onClick={enviarResultados} disabled={enviando} className="w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white">
-                  {enviando ? 'Enviando...' : 'Certificar resultados'}
+                  {enviando ? 'Enviando...' : 'Enviar solicitud de certificación'}
                 </Button>
-                <Button onClick={onVolver} className="w-full sm:w-auto bg-gray-400 hover:bg-gray-500 text-white">
-                  Volver
+                <Button 
+                  onClick={onVolver} 
+                  variant="outline"
+                  className="w-full sm:w-auto border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+                >
+                  <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
                 </Button>
               </div>
             </>
@@ -310,8 +329,12 @@ const TestCertificacion = ({ temaId, onVolver }) => {
             <>
               <p className="text-xl sm:text-2xl text-red-600 mb-4">Lo siento, no has alcanzado el porcentaje necesario para obtener el certificado.</p>
               <p className="text-lg sm:text-xl mb-4">Necesitas un <span className="font-bold">80%</span> de aciertos para aprobar.</p>
-              <Button onClick={onVolver} className="w-full sm:w-auto bg-sociologia-600 hover:bg-sociologia-700 text-white">
-                Volver a las actividades
+              <Button 
+                onClick={onVolver} 
+                variant="outline"
+                className="w-full sm:w-auto border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+              >
+                <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
               </Button>
             </>
           )}
@@ -327,23 +350,34 @@ const TestCertificacion = ({ temaId, onVolver }) => {
   const preguntaActualData = preguntas[preguntaActual];
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="text-lg sm:text-xl">Test de Certificación - Pregunta {preguntaActual + 1} de {preguntas.length}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p className="mb-4 text-base sm:text-lg">{preguntaActualData.pregunta}</p>
-        {preguntaActualData.opciones.map((opcion, index) => (
-          <Button
-            key={index}
-            onClick={() => handleRespuesta(index)}
-            className="block w-full mb-2 bg-sociologia-500 hover:bg-sociologia-600 text-white text-left px-4 py-2 text-sm sm:text-base"
-          >
-            {opcion.texto}
-          </Button>
-        ))}
-      </CardContent>
-    </Card>
+    <div className="w-full max-w-4xl mx-auto">
+      <div className="flex justify-end mb-4">
+        <Button 
+          onClick={onVolver} 
+          variant="outline" 
+          className="border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+        >
+          <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
+        </Button>
+      </div>
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-lg sm:text-xl">Test de Certificación - Pregunta {preguntaActual + 1} de {preguntas.length}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="mb-4 text-base sm:text-lg">{preguntaActualData.pregunta}</p>
+          {preguntaActualData.opciones.map((opcion, index) => (
+            <Button
+              key={index}
+              onClick={() => handleRespuesta(index)}
+              className="block w-full mb-2 bg-sociologia-500 hover:bg-sociologia-600 text-white text-left px-4 py-2 text-sm sm:text-base"
+            >
+              {opcion.texto}
+            </Button>
+          ))}
+        </CardContent>
+      </Card>
+    </div>
   );
 };
 

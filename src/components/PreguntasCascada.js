@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
-import { Clock, HelpCircle } from 'lucide-react';
+import { Clock, HelpCircle, ArrowLeft } from 'lucide-react';
 import { temasData } from '../dataTemas';
 import Confetti from 'react-confetti';
 
@@ -117,9 +117,18 @@ const PreguntasCascada = ({ temaId, onVolver }) => {
 
   if (!juegoIniciado) {
     return (
-      <Card className="mb-4 w-full max-w-2xl mx-auto">
+      <Card className="mb-4 w-full max-w-2xl mx-auto relative">
+        <div className="absolute top-4 right-4">
+          <Button 
+            onClick={onVolver}
+            variant="outline" 
+            className="border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
+          </Button>
+        </div>
         <CardHeader>
-          <CardTitle className="flex items-center text-xl sm:text-2xl font-bold text-sociologia-700">
+          <CardTitle className="flex items-center text-xl sm:text-2xl font-bold text-sociologia-700 mt-12">
             <HelpCircle className="mr-2" />
             Instrucciones de la actividad
           </CardTitle>
@@ -182,7 +191,13 @@ const PreguntasCascada = ({ temaId, onVolver }) => {
             </div>
             <div className="mt-4 sm:mt-6 space-y-2 sm:space-y-0 sm:space-x-2 flex flex-col sm:flex-row justify-center">
               <Button onClick={reiniciarJuego} className="bg-sociologia-600 hover:bg-sociologia-700 text-white w-full sm:w-auto">Jugar de nuevo</Button>
-              <Button onClick={onVolver} className="bg-sociologia-600 hover:bg-sociologia-700 text-white w-full sm:w-auto">Volver a las actividades</Button>
+              <Button 
+                onClick={onVolver} 
+                variant="outline" 
+                className="w-full sm:w-auto border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+              >
+                <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
+              </Button>
             </div>
           </CardContent>
         </Card>
@@ -198,8 +213,15 @@ const PreguntasCascada = ({ temaId, onVolver }) => {
 
   return (
     <Card className="w-full max-w-2xl mx-auto">
-      <CardHeader>
-        <CardTitle className="text-xl sm:text-2xl font-bold text-sociologia-700">Nivel {nivelActual + 1}</CardTitle>
+      <CardHeader className="flex flex-row justify-between items-center">
+        <CardTitle className="text-lg sm:text-xl md:text-2xl">Nivel {nivelActual + 1}</CardTitle>
+        <Button 
+          onClick={onVolver}
+          variant="outline" 
+          className="border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+        >
+          <ArrowLeft className="mr-2 h-4 w-4" /> Abandonar prueba
+        </Button>
       </CardHeader>
       <CardContent>
         <div className="mb-4 flex justify-between items-center">

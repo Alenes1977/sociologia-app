@@ -94,7 +94,7 @@ const Flashcards = ({ temaId, onVolver }) => {
           variant="outline" 
           className="w-full text-left justify-start sm:w-auto border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
         >
-          <ArrowLeft className="mr-2 h-4 w-4" /> Volver a las actividades
+          <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
         </Button>
         <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md w-full sm:w-auto justify-center">
           <Book className="text-sociologia-500 mr-2" size={20} />
