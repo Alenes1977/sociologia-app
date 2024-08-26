@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
 import { Button } from "./components/ui/button";
@@ -16,7 +16,9 @@ import { temasData } from './dataTemas';
 import TemaCard from './components/TemaCard';
 import MapasMentales from './components/MapasMentales';
 import VideosEducativos from './components/VideosEducativos';
-import { GraduationCap, Brain, MessageCircleQuestion, Link, WholeWord, FlipVertical, GitBranch, TextSearch, Map, Video } from 'lucide-react';
+import Mentor from './components/Mentor';
+import { scrollToTop } from './utils/scrollToTop';
+import { GraduationCap, Brain, MessageCircleQuestion, Link, WholeWord, FlipVertical, GitBranch, TextSearch, Map, Video, MessageCircle } from 'lucide-react';
 
 const actividadesIconos = {
   quiz: Brain,
@@ -29,12 +31,14 @@ const actividadesIconos = {
   testCertificacion: GraduationCap,
   mapasMentales: Map,
   videosEducativos: Video,
+  mentor: MessageCircle,
 };
 
 const actividades = {
   contenidosEducativos: [
     { id: 'videosEducativos', nombre: "Videos educativos", componente: VideosEducativos, descripcion: "Visualiza los vídeos educativos sobre el tema", color: "from-gray-400 to-gray-600", imagen: "/images/videos.webp" },
     { id: 'mapasMentales', nombre: "Mapas Mentales", componente: MapasMentales, descripcion: "Visualiza mapas conceptuales interactivos", color: "from-gray-400 to-gray-600", imagen: "/images/mapamental.webp" },
+    { id: 'mentor', nombre: "Mentor Virtual", componente: Mentor, descripcion: "Chatea para resolver tus dudas sobre los contenidos del tema", color: "from-gray-400 to-gray-600", imagen: "/images/mentorvirtual.webp" },
   ],
   recursosAprendizaje: [
     { id: 'quiz', nombre: "Quiz interactivo", componente: QuizInteractivo, descripcion: "Pon a prueba tus conocimientos", color: "from-blue-400 to-blue-600", imagen: "/images/actividad1.webp" },
@@ -53,6 +57,10 @@ const actividades = {
 const App = () => {
   const [temaSeleccionado, setTemaSeleccionado] = useState(null);
   const [actividadSeleccionada, setActividadSeleccionada] = useState(null);
+
+  useEffect(() => {
+    scrollToTop();
+  }, [temaSeleccionado, actividadSeleccionada]);
 
   const temas = Object.keys(temasData).map(id => ({
     id: parseInt(id),

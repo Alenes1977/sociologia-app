@@ -2,6 +2,7 @@ export const temasData = {
     1: {
       titulo: "TEMA 1",
       subtitulo: "Qué es la sociología: la condición sociocultural del ser humano",
+      mentorUrl: "https://chatgpt.com/g/g-KHgV0THMu-mentor-sociologico-tema-1-unav",
       subtemas: [
         {
           titulo: "¿Qué es la sociología?",
@@ -1568,6 +1569,7 @@ export const temasData = {
     2: {
       titulo: "TEMA 2",
       subtitulo: "Cultura y diversidad cultural",
+      mentorUrl: "https://chatgpt.com/g/g-VJf0bXUj9-mentor-sociologico-tema-2-unav",
       subtemas: [
         {
           titulo: "¿Qué es la sociología?",
@@ -1610,14 +1612,14 @@ export const temasData = {
       ],
       mapasMentales: [
         {
-          id: 'culturadiversidad',
-          titulo: 'Mapatema2',
-          url: 'https://aprendizajeconia.com/sociologiaUNAV/sociologia.html'
+          id: 'cultura',
+          titulo: 'Concepto y componentes de la cultura',
+          url: 'https://aprendizajeconia.com/sociologiaUNAV/cultura.html'
         },
         {
-          id: 'otro',
-          titulo: 'otro mapa para Tema2',
-          url: 'https://aprendizajeconia.com/sociologiaUNAV/condicionsociocultural.html'
+          id: 'relativismo',
+          titulo: 'Diversidad cultural y el reto del relativismo cultural',
+          url: 'https://aprendizajeconia.com/sociologiaUNAV/relativismo.html'
         },
       ],
       conceptosClave: [
@@ -2566,5 +2568,6 @@ export const temasData = {
         }
       ]
     }
+   
     // Aquí puedes añadir más temas en el futuro
   };
