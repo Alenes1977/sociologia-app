@@ -2,7 +2,7 @@ export const temasData = {
     1: {
       titulo: "TEMA 1",
       subtitulo: "Qué es la sociología: la condición sociocultural del ser humano",
-      mentorUrl: "https://chatgpt.com/g/g-KHgV0THMu-mentor-sociologico-tema-1-unav",
+      mentorUrl: "https://chatgpt.com/g/g-ypc4AcmUG-mentor-sociologico-sociologiaunav-tema-1",
       subtemas: [
         {
           titulo: "¿Qué es la sociología?",
@@ -1569,7 +1569,7 @@ export const temasData = {
     2: {
       titulo: "TEMA 2",
       subtitulo: "Cultura y diversidad cultural",
-      mentorUrl: "https://chatgpt.com/g/g-VJf0bXUj9-mentor-sociologico-tema-2-unav",
+      mentorUrl: "https://chatgpt.com/g/g-to9lNR0F5-mentor-sociologico-sociologiaunav-tema-2",
       subtemas: [
         {
           titulo: "¿Qué es la sociología?",
