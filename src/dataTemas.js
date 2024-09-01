@@ -2571,7 +2571,7 @@ export const temasData = {
     3: {
       titulo: "TEMA 3",
       subtitulo: "Acción social e instituciones sociales",
-      mentorUrl: "https://chatgpt.com/",
+      mentorUrl: "https://chatgpt.com/g/g-iIsNIAdbc-mentor-sociologico-sociologiaunav-tema-3",
       subtemas: [
         {
           titulo: "Fundamentos de la acción social",
