@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
-import { HelpCircle, X, ArrowLeft } from 'lucide-react';
+import { HelpCircle, X, ArrowLeft, Eye, ExternalLink } from 'lucide-react';
 import { temasData } from '../dataTemas';
 
 const MapasMentales = ({ temaId, onVolver }) => {
@@ -29,7 +29,11 @@ const MapasMentales = ({ temaId, onVolver }) => {
       <CardContent>
         <ul className="list-disc list-inside space-y-2 text-sociologia-600">
           <li>Estos mapas conceptuales interactivos están diseñados para ayudarte a repasar los contenidos fundamentales de este tema específico.</li>
-          <li>Haz clic en "Ver Mapa Mental" para abrir el mapa directamente en esta página.</li>
+          <li>Tienes dos opciones para ver cada mapa mental:</li>
+          <ul className="list-disc list-inside ml-6 space-y-1">
+            <li>"Ver Incrustado": Abre el mapa directamente en esta página.</li>
+            <li>"Abrir en Nueva Pestaña": Abre el mapa en una nueva pestaña del navegador.</li>
+          </ul>
           <li>Puedes hacer zoom para acercar o alejar el mapa mental, y moverlo libremente.</li>
           <li>Pulsa en cualquiera de los nodos circulares para colapsar o desplegar los niveles inferiores del mapa.</li>
         </ul>
@@ -68,11 +72,11 @@ const MapasMentales = ({ temaId, onVolver }) => {
     <div>
       <div className="flex justify-end mb-4">
         <Button 
-            onClick={onVolver} 
-            variant="outline" 
-            className="w-full sm:w-auto border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
+          onClick={onVolver} 
+          variant="outline" 
+          className="w-full sm:w-auto border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+        >
+          <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
         </Button>
       </div>
 
@@ -84,12 +88,18 @@ const MapasMentales = ({ temaId, onVolver }) => {
               <CardHeader>
                 <CardTitle className="text-lg font-semibold text-sociologia-700">{mapa.titulo}</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-2">
                 <Button
                   onClick={() => setMapaSeleccionado(mapa)}
                   className="w-full bg-sociologia-600 hover:bg-sociologia-700 text-white"
                 >
-                  Ver Mapa Mental
+                  <Eye className="mr-2 h-4 w-4" /> Ver Incrustado
+                </Button>
+                <Button
+                  onClick={() => window.open(mapa.url, '_blank')}
+                  className="w-full bg-sociologia-500 hover:bg-sociologia-600 text-white"
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" /> Abrir en Nueva Pestaña
                 </Button>
               </CardContent>
             </Card>
@@ -102,11 +112,11 @@ const MapasMentales = ({ temaId, onVolver }) => {
 
       <div className="flex justify-end mt-6">
         <Button 
-            onClick={onVolver} 
-            variant="outline" 
-            className="w-full sm:w-auto border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
+          onClick={onVolver} 
+          variant="outline" 
+          className="w-full sm:w-auto border-sociologia-400 text-sociologia-600 hover:bg-sociologia-100 transition-all duration-300 transform hover:scale-105 shadow-sm py-2 px-4"
+        >
+          <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Actividades
         </Button>
       </div>
     </div>

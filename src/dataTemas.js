@@ -2567,6 +2567,907 @@ export const temasData = {
           opciones: ["Helen Keller", "Anne Sullivan", "Louis Braille", "Alexander Graham Bell"]
         }
       ]
+    },
+    3: {
+      titulo: "TEMA 3",
+      subtitulo: "Acción social e instituciones sociales",
+      mentorUrl: "https://chatgpt.com/",
+      subtemas: [
+        {
+          titulo: "Fundamentos de la acción social",
+          conceptos: [
+            "Definición de acción social",
+            "El proceso de reconocimiento del otro",
+            "Axioma de perspectivas y otro generalizado"
+          ]
+        },
+        {
+          titulo: "Las instituciones sociales",
+          conceptos: [
+            "Definición y supuestos",
+            "Proceso de institucionalización, funciones y cambio"
+          ]
+        }
+      ],
+      videosEducativos: [
+        {
+          id: 'video1',
+          titulo: 'El proceso de reconocimiento del otro del "alter ego"',
+          url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=87b5f593-cab5-41f3-9b4a-b1dd008f3af8',
+          tipo: 'panopto',
+          thumbnail: 'Thumbnail_3-1.jpg'
+        },
+        {
+          id: 'video2',
+          titulo: 'Expectativas sociales y prejuicios culturales',
+          url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7bda05e9-462a-47cd-aff7-b1dd008f3b2c',
+          tipo: 'panopto',
+          thumbnail: 'Thumbnail_3-2.jpg'
+        },
+        {
+          id: 'video3',
+          titulo: 'La acción social institucionalizada',
+          url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=46b935b3-6a98-4c3a-94d0-b1dd008f3b60',
+          tipo: 'panopto',
+          thumbnail: 'Thumbnail_3-3.jpg'
+        },
+        {
+          id: 'video4',
+          titulo: 'El proceso de institucionalización',
+          url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b3a814b3-2a34-464d-81c6-b1dd008f3aaa',
+          tipo: 'panopto',
+          thumbnail: 'Thumbnail_3-4.jpg'
+        },
+        {
+          id: 'video5',
+          titulo: 'Legitimación y cambio de la conducta institucionalizada',
+          url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=67bfe628-72ed-4fde-80ec-b1dd008f7fdb',
+          tipo: 'panopto',
+          thumbnail: 'Thumbnail_3-5.jpg'
+        },
+      ],
+      mapasMentales: [
+        {
+          id: 'accionsocial',
+          titulo: 'Fundamentos de la acción social',
+          url: 'https://aprendizajeconia.com/sociologiaUNAV/accionsocial.html'
+        },
+        {
+          id: 'instituciones',
+          titulo: 'Instituciones sociales y el proceso de institucionalización',
+          url: 'https://aprendizajeconia.com/sociologiaUNAV/instituciones.html'
+        },
+      ],
+      conceptosClave: [
+      {
+          termino: "Institución social",
+          definicion: "conductas de carácter obligatorio reguladas socialmente para ciertos ámbitos de la vida social"
+      },
+      {
+          termino: "Rol social",
+          definicion: "Conjunto de expectativas de comportamiento asociado a una posición social particular."
+      },
+      {
+          termino: "Socialización",
+          definicion: "Proceso mediante el cual los individuos aprenden y asimilan las normas y valores de su sociedad."
+      },
+      {
+          termino: "Norma social",
+          definicion: "Reglas y expectativas de comportamiento que guían la conducta de los miembros de una sociedad."
+      },
+      {
+          termino: "Valor social",
+          definicion: "Criterios compartidos por los miembros de una sociedad sobre lo que es deseable y moralmente correcto."
+      },
+      {
+        termino: "Acción social",
+        definicion: "Según Max Weber, es aquella acción humana cuyo sentido subjetivo está dirigido a la conducta de otros, orientándose por ésta en su desarrollo."
+        },
+        {
+        termino: "Rutinización de la acción",
+        definicion: "Proceso por el cual las acciones se convierten en rutinas, es decir, en comportamientos repetidos y previsibles que no requieren de una toma de decisiones consciente en cada ocasión."
+        },
+        {
+        termino: "Expectativa cumplida de regularidad",
+        definicion: "Supuesto de las instituciones sociales donde se espera que los demás actúen de manera consistente y predecible en situaciones similares."
+        },
+        {
+        termino: "Proceso de institucionalización",
+        definicion: "Transición de prácticas que inicialmente pueden haber sido consensuadas o informales a normas obligatorias que guían el comportamiento de los individuos dentro de la sociedad."
+        },
+        {
+        termino: "Función de descarga",
+        definicion: "Capacidad de las instituciones para liberar a los individuos de la necesidad de tomar decisiones constantes que suponen un esfuerzo cognitivo sobre cómo comportarse en diferentes situaciones."
+        },
+        {
+        termino: "Legitimación",
+        definicion: "Proceso a través del cual las instituciones justifican su existencia y su autoridad."
+        },
+        {
+        termino: "Desinstitucionalización",
+        definicion: "Proceso en el que una norma o práctica que antes estaba institucionalizada pierde su legitimidad o relevancia, y deja de ser seguida por la mayoría de los miembros de la sociedad."
+        },
+        {
+        termino: "Facta",
+        definicion: "Según Maurice Hauriou, son hechos que materializan una idea y que tienen un poder sancionador en la sociedad."
+        },
+        {
+        termino: "Hechos sociales",
+        definicion: "Según Émile Durkheim, son maneras de actuar, pensar y sentir que existen fuera de la conciencia individual y que imponen su normatividad sobre el individuo."
+        },
+        {
+        termino: "Funcionalismo",
+        definicion: "Enfoque que ve las instituciones sociales como respuestas a las necesidades tanto individuales como colectivas, propuesto por Herbert Spencer."
+        },
+        {
+        termino: "Unidades de organización social",
+        definicion: "Concepto de Bronislaw Malinowski que describe a las instituciones como estructuras que organizan y regulan el comportamiento para asegurar la satisfacción de necesidades humanas."
+        },
+        {
+        termino: "Modelos orientativos",
+        definicion: "Según Talcott Parsons, son patrones normativos proporcionados por las instituciones que guían la acción individual y colectiva."
+        },
+        {
+        termino: "Alter ego",
+        definicion: "Reconocimiento del otro como un ser autónomo con experiencias, pensamientos y sentimientos propios, fundamental para la acción social."
+        },
+        {
+        termino: "Axioma de reciprocidad de perspectivas",
+        definicion: "Concepto de Alfred Schütz que explica cómo los individuos asumen que, en situaciones similares, las personas experimentan y perciben la realidad de manera similar."
+        },
+        {
+        termino: "Otro generalizado",
+        definicion: "Concepto de George Herbert Mead que se refiere a la manera en que internalizamos las actitudes y expectativas generales de la sociedad o de grupos sociales específicos."
+        },
+        {
+        termino: "Pretensión de reconocimiento",
+        definicion: "Deseo humano de ser visto y comprendido en su intimidad y de manera particular, más allá de las generalizaciones y estereotipos."
+        },
+        {
+        termino: "Sanciones sociales",
+        definicion: "Mecanismos de control asociados al cumplimiento o incumplimiento de las normas en una sociedad."
+        },
+        {
+          termino: "Aparato coercitivo",
+          definicion: "Conjunto de medios que una institución social puede emplear para hacer cumplir sus normas, incluyendo sanciones formales e informales."
+        },
+        {
+          termino: "Umbral de consciencia",
+          definicion: "Límite cognitivo que requiere que los seres humanos filtren la sobreestimulación para poder ser funcionales, facilitado por las instituciones sociales."
+        },
+        
+      ],
+      preguntasQuiz: [
+        {
+          pregunta: "¿Quién definió la acción social como 'aquella acción humana cuyo sentido subjetivo está dirigido a la conducta de otros'?",
+          opciones: [
+            "Émile Durkheim",
+            "Max Weber",
+            "George Herbert Mead",
+            "Talcott Parsons"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Qué concepto se refiere al reconocimiento del otro como un ser autónomo similar a mi pero con experiencias, pensamientos y sentimientos propios?",
+          opciones: [
+            "Otro generalizado",
+            "Alter ego",
+            "Intersubjetividad",
+            "Empatía social"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Qué término describe la expectativa de que los demás actuarán de manera coherente con las expectativas sociales compartidas?",
+          opciones: [
+            "Confianza básica",
+            "Reciprocidad social",
+            "Conformidad normativa",
+            "Expectativa de regularidad"
+          ],
+          respuestaCorrecta: 3
+        },
+        {
+          pregunta: "¿Qué concepto de Alfred Schütz explica cómo los individuos asumen que, en situaciones similares, las personas experimentan y perciben la realidad de manera similar?",
+          opciones: [
+            "Teoría de la mente",
+            "Intersubjetividad",
+            "Axioma de reciprocidad de perspectivas",
+            "Empatía cognitiva"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué término se refiere a la manera en que internalizamos las actitudes y expectativas generales de la sociedad?",
+          opciones: [
+            "Otro significativo",
+            "Otro generalizado",
+            "Alter ego",
+            "Self social"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Qué proceso describe la transición de prácticas consensuadas a normas obligatorias en la sociedad?",
+          opciones: [
+            "Legitimación",
+            "Institucionalización",
+            "Socialización",
+            "Normativización"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Qué función de las instituciones sociales libera a los individuos de la necesidad de tomar decisiones constantes sobre cómo comportarse?",
+          opciones: [
+            "Función de control",
+            "Función de descarga",
+            "Función de orientación",
+            "Función de integración"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Qué término describe el proceso por el cual una norma o práctica institucionalizada pierde su legitimidad o relevancia?",
+          opciones: [
+            "Desinstitucionalización",
+            "Anomia",
+            "Desocialización",
+            "Desintegración social"
+          ],
+          respuestaCorrecta: 0
+        },
+        {
+          pregunta: "Según Maurice Hauriou, ¿qué término describe los hechos que materializan una idea y tienen un poder sancionador en la sociedad?",
+          opciones: [
+            "Hechos sociales",
+            "Facta",
+            "Normas institucionalizadas",
+            "Valores sociales"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Quién introdujo el concepto de 'hechos sociales' como maneras de actuar, pensar y sentir que existen fuera de la conciencia individual?",
+          opciones: [
+            "Max Weber",
+            "Émile Durkheim",
+            "George Herbert Mead",
+            "Talcott Parsons"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Qué enfoque ve las instituciones sociales como respuestas a las necesidades tanto individuales como colectivas?",
+          opciones: [
+            "Interaccionismo simbólico",
+            "Estructuralismo",
+            "Funcionalismo",
+            "Teoría del conflicto"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué antropólogo describió las instituciones como unidades de organización social que aseguran la satisfacción de necesidades humanas?",
+          opciones: [
+            "Claude Lévi-Strauss",
+            "Bronislaw Malinowski",
+            "Margaret Mead",
+            "Franz Boas"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Qué sociólogo propuso el concepto de 'modelos orientativos' como patrones normativos que guían la acción individual y colectiva?",
+          opciones: [
+            "Robert K. Merton",
+            "Talcott Parsons",
+            "Erving Goffman",
+            "Harold Garfinkel"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Qué proceso de desarrollo cognitivo implica el reconocimiento progresivo de un mundo objetivo y persistente más allá de la propia subjetividad?",
+          opciones: [
+            "Egocentrismo",
+            "Descentralización del yo",
+            "Teoría de la mente",
+            "Desarrollo moral"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Qué concepto se refiere a la comprensión de que los objetos y personas siguen existiendo aunque no se perciban directamente?",
+          opciones: [
+            "Permanencia del objeto",
+            "Realismo ingenuo",
+            "Constancia perceptual",
+            "Objetividad cognitiva"
+          ],
+          respuestaCorrecta: 0
+        },
+        {
+          pregunta: "¿Qué término describe la capacidad para comprender y compartir los sentimientos de otro?",
+          opciones: [
+            "Simpatía",
+            "Compasión",
+            "Empatía",
+            "Altruismo"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué proceso describe cómo los individuos aprenden e internalizan las normas y valores de las instituciones existentes en su sociedad?",
+          opciones: [
+            "Enculturación",
+            "Aculturación",
+            "Socialización",
+            "Asimilación"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué término describe el proceso por el cual las instituciones se reforman, reemplazan o desmantelan?",
+          opciones: [
+            "Evolución institucional",
+            "Cambio social",
+            "Revolución cultural",
+            "Cambio institucional"
+          ],
+          respuestaCorrecta: 3
+        },
+        {
+          pregunta: "¿Qué concepto se refiere a las pautas de comportamiento que orientan la conducta de los miembros de una comunidad?",
+          opciones: [
+            "Valores",
+            "Roles",
+            "Normas sociales",
+            "Costumbres"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué término describe los conjuntos de normas asociadas a posiciones sociales específicas?",
+          opciones: [
+            "Estatus",
+            "Roles sociales",
+            "Funciones sociales",
+            "Identidades sociales"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Qué concepto se refiere a los principios interpretativos y de juicio compartidos por una comunidad cultural?",
+          opciones: [
+            "Ideologías",
+            "Creencias",
+            "Valores sociales",
+            "Paradigmas culturales"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué término describe los mecanismos de control asociados al cumplimiento o incumplimiento de las normas en una sociedad?",
+          opciones: [
+            "Control social",
+            "Coerción",
+            "Sanciones sociales",
+            "Presión normativa"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué término describe el conjunto de medios que una institución social puede emplear para hacer cumplir sus normas?",
+          opciones: [
+            "Aparato coercitivo",
+            "Sistema de control",
+            "Mecanismo de imposición",
+            "Estructura de autoridad"
+          ],
+          respuestaCorrecta: 0
+        },
+        {
+          pregunta: "¿Qué concepto se utiliza para describir el estado de estabilidad y cohesión en una sociedad, mantenido en parte por las instituciones sociales?",
+          opciones: [
+            "Equilibrio social",
+            "Armonía cultural",
+            "Orden social",
+            "Estabilidad estructural"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué fenómeno ocurre cuando las razones originales para una práctica institucionalizada se olvidan, pero la norma se sigue observando?",
+          opciones: [
+            "Inercia institucional",
+            "Pérdida del sentido originario",
+            "Descontextualización normativa",
+            "Ritualización social"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "¿Qué límite cognitivo requiere que los seres humanos filtren la sobreestimulación para poder ser funcionales?",
+          opciones: [
+            "Umbral de atención",
+            "Límite de procesamiento",
+            "Umbral de consciencia",
+            "Barrera perceptual"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué término se utiliza para describir la capacidad de las instituciones para proporcionar soluciones preestablecidas a problemas recurrentes?",
+          opciones: [
+            "Eficiencia institucional",
+            "Rutinización social",
+            "Función de descarga",
+            "Estandarización conductual"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "Según la teoría de la acción social, ¿qué característica debe tener una acción para ser considerada 'social'?",
+          opciones: [
+            "Debe ser pública",
+            "Debe tener consecuencias visibles",
+            "Debe estar orientada hacia otros",
+            "Debe ser colectiva"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Cómo se define la acción social en términos sociológicos?",
+          opciones: [
+            "Como la acción humana cuyo sentido subjetivo está dirigido a la conducta de otros",
+            "Como cualquier acción sin necesidad de tener en cuenta a los demás",
+            "Como un comportamiento instintivo",
+            "Como una acción que siempre se realiza en soledad"
+          ],
+          respuestaCorrecta: 0
+        },
+        {
+          pregunta: "¿Qué característica distingue a la acción social de otras formas de acción?",
+          opciones: [
+            "El hecho de que considera la conducta de otros",
+            "Su independencia de la sociedad",
+            "Su naturaleza irracional",
+            "Su falta de propósito"
+          ],
+          respuestaCorrecta: 0
+        },
+        {
+          pregunta: "En el contexto de la acción social, ¿qué implica la cláusula 'ceteris paribus' mencionada en los apuntes?",
+          opciones: [
+            "Que la acción social es siempre predecible",
+            "Que las condiciones deben ser iguales para que se cumpla el axioma de reciprocidad",
+            "Que las diferencias culturales no afectan la acción social",
+            "Que todas las acciones sociales son universales"
+          ],
+          respuestaCorrecta: 1
+        },
+        {
+          pregunta: "Según los apuntes, ¿qué aspecto de la interacción social refleja la 'pretensión de reconocimiento'?",
+          opciones: [
+            "El deseo de ser visto como parte de una categoría social",
+            "La búsqueda de estatus social",
+            "El anhelo de ser conocido en la intimidad, tal como uno verdaderamente es",
+            "La necesidad de validación externa"
+          ],
+          respuestaCorrecta: 2
+        },
+        {
+          pregunta: "¿Qué característica de las instituciones sociales permite a los individuos concentrarse en tareas más complejas o creativas?",
+          opciones: [
+            "La función de control",
+            "La función de descarga",
+            "La función de orientación",
+            "La función de integración"
+          ],
+          respuestaCorrecta: 1
+        },
+      ],
+      relacionesConceptos: [
+        {
+          concepto1: "Acción social",
+          concepto2: "Intencionalidad",
+          relacion: "La acción social implica una intencionalidad dirigida hacia la conducta de otros"
+        },
+        {
+          concepto1: "Alter ego",
+          concepto2: "Reconocimiento del otro",
+          relacion: "El reconocimiento del alter ego es fundamental para el desarrollo de la interacción social"
+        },
+        {
+          concepto1: "Institucionalización",
+          concepto2: "Normas sociales",
+          relacion: "El proceso de institucionalización convierte prácticas consensuadas en normas sociales obligatorias"
+        },
+        {
+          concepto1: "Función de descarga",
+          concepto2: "Esfuerzo cognitivo",
+          relacion: "La función de descarga de las instituciones reduce el esfuerzo cognitivo individual en la toma de decisiones cotidianas"
+        },
+        {
+          concepto1: "Axioma de reciprocidad de perspectivas",
+          concepto2: "Expectativas compartidas",
+          relacion: "Este axioma permite la formación de expectativas compartidas en la interacción social"
+        },
+        {
+          concepto1: "Otro generalizado",
+          concepto2: "Socialización",
+          relacion: "El concepto de otro generalizado es crucial en el proceso de socialización del individuo"
+        },
+        {
+          concepto1: "Descentralización del yo",
+          concepto2: "Desarrollo cognitivo",
+          relacion: "La descentralización del yo es un proceso clave en el desarrollo cognitivo infantil"
+        },
+        {
+          concepto1: "Facta",
+          concepto2: "Poder sancionador",
+          relacion: "Los facta, según Hauriou, son hechos que materializan ideas y poseen poder sancionador en la sociedad"
+        },
+        {
+          concepto1: "Hechos sociales",
+          concepto2: "Coerción social",
+          relacion: "Los hechos sociales, según Durkheim, ejercen una fuerza coercitiva sobre los individuos"
+        },
+        {
+          concepto1: "Funcionalismo",
+          concepto2: "Necesidades sociales",
+          relacion: "El enfoque funcionalista ve las instituciones como respuestas a las necesidades sociales"
+        },
+        {
+          concepto1: "Rutinización de la acción",
+          concepto2: "Estabilidad institucional",
+          relacion: "La rutinización de las acciones contribuye a la estabilidad de las instituciones sociales"
+        },
+        {
+          concepto1: "Legitimación",
+          concepto2: "Autoridad institucional",
+          relacion: "El proceso de legitimación justifica y refuerza la autoridad de las instituciones sociales"
+        },
+        {
+          concepto1: "Desinstitucionalización",
+          concepto2: "Cambio social",
+          relacion: "La desinstitucionalización es un proceso clave en el cambio social y la evolución de las normas"
+        },
+        {
+          concepto1: "Pretensión de reconocimiento",
+          concepto2: "Identidad personal",
+          relacion: "La pretensión de reconocimiento refleja el deseo de ser comprendido en nuestra identidad personal única"
+        },
+        {
+          concepto1: "Umbral de consciencia",
+          concepto2: "Filtración de estímulos",
+          relacion: "El umbral de consciencia implica la necesidad de filtrar estímulos para un funcionamiento social eficiente"
+        },
+        {
+          concepto1: "Intersubjetividad",
+          concepto2: "Realidad social compartida",
+          relacion: "La intersubjetividad permite la construcción de una realidad social compartida entre los individuos"
+        },
+        {
+          concepto1: "Reducto inaccesible",
+          concepto2: "Límites del conocimiento interpersonal",
+          relacion: "El concepto de reducto inaccesible señala los límites del conocimiento completo de la intimidad de otra persona"
+        }
+      ],
+      crucigrama: {
+        palabras: [
+          {
+            palabra: "ALTEREGO",
+            pista: "Reconocimiento del otro como un ser autónomo similar a uno mismo"
+          },
+          {
+            palabra: "INSTITUCION",
+            pista: "Estructura que regula el comportamiento en una comunidad"
+          },
+          {
+            palabra: "SOCIALIZACION",
+            pista: "Proceso de aprendizaje de normas y valores sociales"
+          },
+          {
+            palabra: "RECIPROCIDAD",
+            pista: "Axioma de Schütz sobre perspectivas compartidas"
+          },
+          {
+            palabra: "DESCARGA",
+            pista: "Función de las instituciones que libera de decisiones constantes"
+          },
+          {
+            palabra: "LEGITIMACION",
+            pista: "Proceso de justificación de la existencia de una institución"
+          },
+          {
+            palabra: "FACTA",
+            pista: "Concepto de Hauriou sobre hechos con poder sancionador"
+          },
+          {
+            palabra: "DURKHEIM",
+            pista: "Sociólogo que introdujo el concepto de 'hechos sociales'"
+          },
+          {
+            palabra: "FUNCIONALISMO",
+            pista: "Enfoque que ve las instituciones como respuestas a necesidades"
+          },
+          {
+            palabra: "WEBER",
+            pista: "Sociólogo que definió la acción social"
+          },
+          {
+            palabra: "PARSONS",
+            pista: "Propuso el concepto de 'modelos orientativos'"
+          },
+          {
+            palabra: "INTERSUBJETIVIDAD",
+            pista: "Comprensión compartida de la realidad con otros"
+          },
+          {
+            palabra: "EMPATIA",
+            pista: "Capacidad de comprender los sentimientos de otros"
+          },
+          {
+            palabra: "COERCION",
+            pista: "Fuerza que ejercen los hechos sociales sobre los individuos"
+          },
+          {
+            palabra: "RUTINIZACION",
+            pista: "Proceso por el cual las acciones se vuelven habituales"
+          },
+          {
+            palabra: "NORMAS",
+            pista: "Pautas de comportamiento que orientan la conducta social"
+          },
+          {
+            palabra: "ROLES",
+            pista: "Conjuntos de normas asociadas a posiciones sociales específicas"
+          },
+          {
+            palabra: "VALORES",
+            pista: "Principios interpretativos compartidos por una comunidad"
+          },
+          {
+            palabra: "MALINOWSKI",
+            pista: "Antropólogo que describió las instituciones como unidades de organización social"
+          },
+          {
+            palabra: "PLESSNER",
+            pista: "Filósofo que introdujo el concepto de 'posición excéntrica'"
+          },
+          {
+            palabra: "MEAD",
+            pista: "Introdujo el concepto de 'otro generalizado'"
+          },
+          {
+            palabra: "SCHUTZ",
+            pista: "Sociólogo que desarrolló el axioma de reciprocidad de perspectivas"
+          },
+          {
+            palabra: "DESCENTRALIZACION",
+            pista: "Proceso de desarrollo cognitivo que permite reconocer un mundo más allá del yo"
+          },
+          {
+            palabra: "RECONOCIMIENTO",
+            pista: "Pretensión de ser comprendido en la propia singularidad"
+          }
+        ]
+      },
+      preguntasCascada: [
+        {
+          nivel: 1,
+          pregunta: "¿Quién definió la acción social como aquella cuyo sentido subjetivo está dirigido a la conducta de otros?",
+          opciones: ["Émile Durkheim", "Max Weber", "Georg Simmel", "Auguste Comte"],
+          respuestaCorrecta: "Max Weber"
+        },
+        {
+          nivel: 1,
+          pregunta: "¿Qué término se refiere a las estructuras que regulan el comportamiento en una sociedad?",
+          opciones: ["Normas", "Valores", "Instituciones", "Costumbres"],
+          respuestaCorrecta: "Instituciones"
+        },
+        {
+          nivel: 2,
+          pregunta: "¿Qué concepto describe el reconocimiento del otro como un ser autónomo similar a uno mismo?",
+          opciones: ["Ego", "Alter ego", "Superego", "Id"],
+          respuestaCorrecta: "Alter ego"
+        },
+        {
+          nivel: 2,
+          pregunta: "¿Qué proceso describe la transición de prácticas consensuadas a normas obligatorias en la sociedad?",
+          opciones: ["Socialización", "Institucionalización", "Normalización", "Culturización"],
+          respuestaCorrecta: "Institucionalización"
+        },
+        {
+          nivel: 3,
+          pregunta: "¿Qué sociólogo introdujo el concepto de 'hechos sociales'?",
+          opciones: ["Max Weber", "Émile Durkheim", "Georg Simmel", "Talcott Parsons"],
+          respuestaCorrecta: "Émile Durkheim"
+        },
+        {
+          nivel: 3,
+          pregunta: "¿Qué función de las instituciones sociales libera a los individuos de tomar decisiones constantes?",
+          opciones: ["Función de control", "Función de descarga", "Función de orientación", "Función de integración"],
+          respuestaCorrecta: "Función de descarga"
+        },
+        {
+          nivel: 4,
+          pregunta: "¿Qué concepto de Alfred Schütz explica cómo los individuos asumen que otros perciben la realidad de manera similar?",
+          opciones: ["Empatía social", "Reciprocidad de perspectivas", "Intersubjetividad", "Cognición compartida"],
+          respuestaCorrecta: "Reciprocidad de perspectivas"
+        },
+        {
+          nivel: 4,
+          pregunta: "¿Qué término describe la internalización de las actitudes y expectativas generales de la sociedad?",
+          opciones: ["Otro significativo", "Otro generalizado", "Alter ego", "Self social"],
+          respuestaCorrecta: "Otro generalizado"
+        },
+        {
+          nivel: 5,
+          pregunta: "¿Qué antropólogo describió las instituciones como unidades de organización social que satisfacen necesidades humanas?",
+          opciones: ["Claude Lévi-Strauss", "Bronislaw Malinowski", "Margaret Mead", "Franz Boas"],
+          respuestaCorrecta: "Bronislaw Malinowski"
+        },
+        {
+          nivel: 5,
+          pregunta: "¿Qué concepto de Maurice Hauriou se refiere a hechos que materializan una idea y tienen poder sancionador?",
+          opciones: ["Hechos sociales", "Facta", "Normas institucionalizadas", "Valores sociales"],
+          respuestaCorrecta: "Facta"
+        },
+        {
+          nivel: 6,
+          pregunta: "¿Qué proceso de desarrollo cognitivo implica el reconocimiento progresivo de un mundo más allá de la propia subjetividad?",
+          opciones: ["Egocentrismo", "Descentralización del yo", "Teoría de la mente", "Desarrollo moral"],
+          respuestaCorrecta: "Descentralización del yo"
+        },
+        {
+          nivel: 6,
+          pregunta: "En qué etapa del desarrollo cognitivo, según Piaget, se consolida el lenguaje?",
+          opciones: ["Senso-motriz", "Preoperacional", "Operacional concreta", "Operacional formal"],
+          respuestaCorrecta: "Preoperacional"
+        },
+
+        {
+          nivel: 7,
+          pregunta: "¿Qué filósofo alemán introdujo el concepto de 'posición excéntrica' del ser humano?",
+          opciones: ["Max Scheler", "Helmuth Plessner", "Arnold Gehlen", "Jürgen Habermas"],
+          respuestaCorrecta: "Helmuth Plessner"
+        },
+        {
+          nivel: 7,
+          pregunta: "¿Qué enfoque ve las instituciones sociales como respuestas a las necesidades tanto individuales como colectivas?",
+          opciones: ["Interaccionismo simbólico", "Estructuralismo", "Funcionalismo", "Teoría del conflicto"],
+          respuestaCorrecta: "Funcionalismo"
+        },
+        {
+          nivel: 8,
+          pregunta: "¿Qué sociólogo propuso el concepto de 'modelos orientativos' como patrones normativos que guían la acción?",
+          opciones: ["Robert K. Merton", "Talcott Parsons", "Erving Goffman", "Harold Garfinkel"],
+          respuestaCorrecta: "Talcott Parsons"
+        },
+        {
+          nivel: 8,
+          pregunta: "¿Qué término describe el proceso por el cual las instituciones justifican su existencia y autoridad en la sociedad?",
+          opciones: ["Validación social", "Legitimación", "Institucionalización", "Ratificación normativa"],
+          respuestaCorrecta: "Legitimación"
+        },
+        {
+          nivel: 9,
+          pregunta: "¿Qué término describe el proceso por el cual una norma o práctica institucionalizada pierde su legitimidad?",
+          opciones: ["Desinstitucionalización", "Anomia", "Desocialización", "Desintegración social"],
+          respuestaCorrecta: "Desinstitucionalización"
+        },
+        {
+          nivel: 9,
+          pregunta: "¿Qué concepto de Schütz se refiere a la suposición de que, en situaciones similares, las personas experimentan y perciben la realidad de manera similar?",
+          opciones: ["Empatía cognitiva", "Reciprocidad fenomenológica", "Axioma de reciprocidad de perspectivas", "Intersubjetividad simétrica"],
+          respuestaCorrecta: "Axioma de reciprocidad de perspectivas"
+        },
+        {
+          nivel: 10,
+          pregunta: "¿Qué concepto se refiere al deseo humano de ser visto y comprendido en su intimidad, más allá de las generalizaciones?",
+          opciones: ["Autenticidad social", "Pretensión de reconocimiento", "Validación interpersonal", "Singularidad identitaria"],
+          respuestaCorrecta: "Pretensión de reconocimiento"
+        },
+        {
+          nivel: 10,
+          pregunta: "¿Qué límite cognitivo requiere que los seres humanos filtren la sobreestimulación para poder ser funcionales?",
+          opciones: ["Umbral de atención", "Límite de procesamiento", "Umbral de consciencia", "Barrera perceptual"],
+          respuestaCorrecta: "Umbral de consciencia"
+        }       
+      ],
+      completarFrase: [
+        {
+          frase: "Según Max Weber, la [BLANK] es aquella acción humana cuyo sentido subjetivo está dirigido a la conducta de otros.",
+          palabraCorrecta: "acción social",
+          opciones: ["acción social", "interacción", "reacción", "conducta"]
+        },
+        {
+          frase: "El proceso por el cual los individuos aprenden e internalizan las normas y valores de las instituciones existentes en su sociedad se llama [BLANK].",
+          palabraCorrecta: "socialización",
+          opciones: ["socialización", "educación", "aculturación", "adaptación"]
+        },
+        {
+          frase: "El [BLANK] de reciprocidad de perspectivas de Alfred Schütz explica cómo los individuos asumen que, en situaciones similares, las personas experimentan y perciben la realidad de manera similar.",
+          palabraCorrecta: "axioma",
+          opciones: ["axioma", "principio", "teorema", "postulado"]
+        },
+        {
+          frase: "La [BLANK] de descarga de las instituciones sociales libera a los individuos de la necesidad de tomar decisiones constantes sobre cómo comportarse.",
+          palabraCorrecta: "función",
+          opciones: ["función", "capacidad", "tarea", "responsabilidad"]
+        },
+        {
+          frase: "El proceso a través del cual las instituciones justifican su existencia y su autoridad se conoce como [BLANK].",
+          palabraCorrecta: "legitimación",
+          opciones: ["legitimación", "justificación", "validación", "aceptación"]
+        },
+        {
+          frase: "Según Maurice Hauriou, los [BLANK] son hechos que materializan una idea y que tienen un poder sancionador en la sociedad.",
+          palabraCorrecta: "facta",
+          opciones: ["facta", "actos", "eventos", "sucesos"]
+        },
+        {
+          frase: "Émile Durkheim introdujo el concepto de [BLANK] sociales como maneras de actuar, pensar y sentir que existen fuera de la conciencia individual.",
+          palabraCorrecta: "hechos",
+          opciones: ["hechos", "fenómenos", "aspectos", "elementos"]
+        },
+        {
+          frase: "El [BLANK] ve las instituciones sociales como respuestas a las necesidades tanto individuales como colectivas.",
+          palabraCorrecta: "funcionalismo",
+          opciones: ["funcionalismo", "estructuralismo", "interaccionismo", "conflictivismo"]
+        },
+        {
+          frase: "La [BLANK] del yo es un proceso de desarrollo cognitivo en el que el individuo progresivamente reconoce la existencia de un mundo más allá de su propia subjetividad.",
+          palabraCorrecta: "descentralización",
+          opciones: ["descentralización", "desvinculación", "separación", "autonomía"]
+        },
+        {
+          frase: "El concepto de [BLANK] se refiere a la manera en que internalizamos las actitudes y expectativas generales de la sociedad o de grupos sociales específicos.",
+          palabraCorrecta: "otro generalizado",
+          opciones: ["otro generalizado", "rol social", "identidad colectiva", "conciencia social"]
+        },
+        {
+          frase: "La [BLANK] de la acción es el proceso por el cual las acciones se convierten en rutinas, es decir, en comportamientos repetidos y previsibles.",
+          palabraCorrecta: "rutinización",
+          opciones: ["rutinización", "habituación", "mecanización", "automatización"]
+        },
+        {
+          frase: "El deseo humano de ser visto y comprendido en su intimidad y de manera particular, más allá de las generalizaciones y estereotipos, se conoce como pretensión de [BLANK].",
+          palabraCorrecta: "reconocimiento",
+          opciones: ["reconocimiento", "individualidad", "autenticidad", "singularidad"]
+        },
+        {
+          frase: "La posición [BLANK] del ser humano, según Helmuth Plessner, se refiere a la capacidad de tomar distancia de sí mismo y del mundo para reflexionar y construir significados.",
+          palabraCorrecta: "excéntrica",
+          opciones: ["excéntrica", "periférica", "marginal", "externa"]
+        },
+        {
+          frase: "El [BLANK] de consciencia es el límite cognitivo que requiere que los seres humanos filtren la sobreestimulación para poder ser funcionales.",
+          palabraCorrecta: "umbral",
+          opciones: ["umbral", "límite", "nivel", "punto"]
+        },
+        {
+          frase: "La [BLANK] es el proceso por el cual una norma o práctica que antes estaba institucionalizada pierde su legitimidad o relevancia.",
+          palabraCorrecta: "desinstitucionalización",
+          opciones: ["desinstitucionalización", "desintegración", "desorganización", "deslegitimación"]
+        },
+        {
+          frase: "El [BLANK] de reciprocidad de perspectivas de Schütz sugiere que, en igualdad de condiciones, el alter ego vive, experimenta y actúa en la realidad de manera similar a como yo lo hago.",
+          palabraCorrecta: "axioma",
+          opciones: ["axioma", "principio", "postulado", "teorema"]
+        },
+        {
+          frase: "El proceso de [BLANK] del yo permite al niño desarrollar la capacidad de reconocer que otras personas tienen pensamientos y sentimientos independientes.",
+          palabraCorrecta: "descentralización",
+          opciones: ["descentralización", "individualización", "separación", "autonomía"]
+        },
+
+
+      ]
     }
    
     // Aquí puedes añadir más temas en el futuro
