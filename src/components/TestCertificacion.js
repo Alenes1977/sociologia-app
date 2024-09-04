@@ -30,7 +30,7 @@ const TestCertificacion = ({ temaId, onVolver }) => {
       if (temaData && temaData.preguntasQuiz) {
         const preguntasAleatorias = temaData.preguntasQuiz
           .sort(() => 0.5 - Math.random())
-          .slice(0, 30)
+          .slice(0, 3)
           .map(pregunta => {
             const opcionesAleatorias = pregunta.opciones
               .map((texto, index) => ({
@@ -114,7 +114,7 @@ const TestCertificacion = ({ temaId, onVolver }) => {
     });
 
     try {
-      const response = await fetch('https://gcn8n.aprendizajeconia.com/webhook/sociologia-app', {
+      const response = await fetch('https://n8n.aprendizajeconia.com/webhook/sociologia-app', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
