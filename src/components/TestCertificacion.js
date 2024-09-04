@@ -30,7 +30,7 @@ const TestCertificacion = ({ temaId, onVolver }) => {
       if (temaData && temaData.preguntasQuiz) {
         const preguntasAleatorias = temaData.preguntasQuiz
           .sort(() => 0.5 - Math.random())
-          .slice(0, 3)
+          .slice(0, 30)
           .map(pregunta => {
             const opcionesAleatorias = pregunta.opciones
               .map((texto, index) => ({
