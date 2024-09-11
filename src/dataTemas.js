@@ -33,35 +33,35 @@ export const temasData = {
           titulo: 'La perspectiva relacional en Sociología',
           url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=143f7507-bb43-4f3c-bf14-b1d201314863',
           tipo: 'panopto',
-          thumbnail: 'Thumbnail_1-1.png'
+          thumbnail: 'Thumbnail_1-1.webp'
         },
         {
           id: 'video2',
           titulo: 'La triple semántica de "lo social"',
           url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=060a3208-bb9b-4356-9f70-b1d201349c33',
           tipo: 'panopto',
-          thumbnail: 'Thumbnail_1-2.png'
+          thumbnail: 'Thumbnail_1-2.webp'
         },
         {
           id: 'video3',
           titulo: 'Principales enfoques sociológicos',
           url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7a2bd48c-110e-4c2b-a89e-ac28013f5e40',
           tipo: 'panopto',
-          thumbnail: 'Thumbnail_1-3.jpg'
+          thumbnail: 'Thumbnail_1-3.webp'
         },
         {
           id: 'video4',
           titulo: '¿Qué nos diferencia de los animales?',
           url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d7c5734f-5ccd-4842-923e-af8501197341',
           tipo: 'panopto',
-          thumbnail: 'Thumbnail_1-4.jpg'
+          thumbnail: 'Thumbnail_1-4.webp'
         },
         {
           id: 'video5',
           titulo: '¿Somos seres realmente sociables?',
           url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c3145839-49ff-42af-900e-af8501198936',
           tipo: 'panopto',
-          thumbnail: 'Thumbnail_1-5.jpg'
+          thumbnail: 'Thumbnail_1-5.webp'
         },
         //Para utilizar youtube
         //{
@@ -69,7 +69,7 @@ export const temasData = {
         //  titulo: 'La triple semántica de "lo social"',
         //  url: 'https://www.youtube.com/watch?v=2a1S4qBvlOg',
         //  tipo: 'youtube',
-        //  thumbnail: 'Thumbnail_1-1.jpg'
+        //  thumbnail: 'Thumbnail_1-1.webp'
         //},
 
         //Para utilizar tu propio servidor
@@ -78,7 +78,7 @@ export const temasData = {
         //  titulo: 'La triple semántica de "lo social"',
         //  url: 'https://aprendizajeconia.com/sociologiaUNAV/Alex_IA.mp4',
         //  tipo: 'servidor',
-        //  thumbnail: 'Thumbnail_1-1.jpg'
+        //  thumbnail: 'Thumbnail_1-1.webp'
         //},
       ],
       mapasMentales: [
@@ -1600,14 +1600,14 @@ export const temasData = {
           titulo: 'Concepto y sentidos de "cultura"',
           url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=af80e708-70aa-4bcd-bf07-ac380070af9b',
           tipo: 'panopto',
-          thumbnail: 'Thumbnail_2-1.jpg'
+          thumbnail: 'Thumbnail_2-1.webp'
         },
         {
           id: 'video2',
           titulo: 'Componentes de la cultura',
           url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0c04b2f6-9e64-4b33-bd52-ac380070afc6',
           tipo: 'panopto',
-          thumbnail: 'Thumbnail_2-2.jpg'
+          thumbnail: 'Thumbnail_2-2.webp'
         },
       ],
       mapasMentales: [
@@ -2595,35 +2595,35 @@ export const temasData = {
           titulo: 'El proceso de reconocimiento del otro del "alter ego"',
           url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=87b5f593-cab5-41f3-9b4a-b1dd008f3af8',
           tipo: 'panopto',
-          thumbnail: 'Thumbnail_3-1.jpg'
+          thumbnail: 'Thumbnail_3-1.webp'
         },
         {
           id: 'video2',
           titulo: 'Expectativas sociales y prejuicios culturales',
           url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7bda05e9-462a-47cd-aff7-b1dd008f3b2c',
           tipo: 'panopto',
-          thumbnail: 'Thumbnail_3-2.jpg'
+          thumbnail: 'Thumbnail_3-2.webp'
         },
         {
           id: 'video3',
           titulo: 'La acción social institucionalizada',
           url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=46b935b3-6a98-4c3a-94d0-b1dd008f3b60',
           tipo: 'panopto',
-          thumbnail: 'Thumbnail_3-3.jpg'
+          thumbnail: 'Thumbnail_3-3.webp'
         },
         {
           id: 'video4',
           titulo: 'El proceso de institucionalización',
           url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b3a814b3-2a34-464d-81c6-b1dd008f3aaa',
           tipo: 'panopto',
-          thumbnail: 'Thumbnail_3-4.jpg'
+          thumbnail: 'Thumbnail_3-4.webp'
         },
         {
           id: 'video5',
           titulo: 'Legitimación y cambio de la conducta institucionalizada',
           url: 'https://unav.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=67bfe628-72ed-4fde-80ec-b1dd008f7fdb',
           tipo: 'panopto',
-          thumbnail: 'Thumbnail_3-5.jpg'
+          thumbnail: 'Thumbnail_3-5.webp'
         },
       ],
       mapasMentales: [
