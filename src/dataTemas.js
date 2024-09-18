@@ -81,6 +81,20 @@ export const temasData = {
         //  thumbnail: 'Thumbnail_1-1.webp'
         //},
       ],
+      podcasts: [
+        {
+          id: 'podcast1',
+          titulo: 'Tema 1 (English)',
+          descripcion: 'Conversación sobre los contenidos del Tema 1',
+          url: 'https://aprendizajeconia.com/sociologiaUNAV/Podcast_Tema1_english.wav',
+        },
+        // {
+        //   id: 'podcast2',
+        //   titulo: 'La condición sociocultural del ser humano',
+        //   descripcion: 'Explorando cómo la cultura y la sociedad moldean nuestra existencia',
+        //   url: 'https://example.com/podcast2.mp3',
+        // },
+      ],
       mapasMentales: [
         {
           id: 'sociologia',
@@ -1610,6 +1624,20 @@ export const temasData = {
           thumbnail: 'Thumbnail_2-2.webp'
         },
       ],
+      podcasts: [
+        {
+          id: 'podcast1',
+          titulo: 'Tema 2 (English)',
+          descripcion: 'Conversación sobre los contenidos del Tema 2',
+          url: 'https://aprendizajeconia.com/sociologiaUNAV/Podcast_Tema2_english.wav',
+        },
+        // {
+        //   id: 'podcast2',
+        //   titulo: 'La condición sociocultural del ser humano',
+        //   descripcion: 'Explorando cómo la cultura y la sociedad moldean nuestra existencia',
+        //   url: 'https://example.com/podcast2.mp3',
+        // },
+      ],
       mapasMentales: [
         {
           id: 'cultura',
@@ -2625,6 +2653,20 @@ export const temasData = {
           tipo: 'panopto',
           thumbnail: 'Thumbnail_3-5.webp'
         },
+      ],
+      podcasts: [
+        {
+          id: 'podcast1',
+          titulo: 'Tema 3 (English)',
+          descripcion: 'Conversación sobre los contenidos del Tema 3',
+          url: 'https://aprendizajeconia.com/sociologiaUNAV/Podcast_Tema3_english.wav',
+        },
+        // {
+        //   id: 'podcast2',
+        //   titulo: 'La condición sociocultural del ser humano',
+        //   descripcion: 'Explorando cómo la cultura y la sociedad moldean nuestra existencia',
+        //   url: 'https://example.com/podcast2.mp3',
+        // },
       ],
       mapasMentales: [
         {

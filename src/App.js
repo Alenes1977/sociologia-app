@@ -17,8 +17,9 @@ import TemaCard from './components/TemaCard';
 import MapasMentales from './components/MapasMentales';
 import VideosEducativos from './components/VideosEducativos';
 import Mentor from './components/Mentor';
+import Podcast from './components/Podcast';
 import { scrollToTop } from './utils/scrollToTop';
-import { GraduationCap, Brain, MessageCircleQuestion, Link, WholeWord, FlipVertical, GitBranch, TextSearch, Map, Video, MessageCircle } from 'lucide-react';
+import { Headphones, GraduationCap, Brain, MessageCircleQuestion, Link, WholeWord, FlipVertical, GitBranch, TextSearch, Map, Video, MessageCircle } from 'lucide-react';
 
 const actividadesIconos = {
   quiz: Brain,
@@ -32,6 +33,7 @@ const actividadesIconos = {
   mapasMentales: Map,
   videosEducativos: Video,
   mentor: MessageCircle,
+  podcast: Headphones,
 };
 
 const actividades = {
@@ -39,6 +41,7 @@ const actividades = {
     { id: 'videosEducativos', nombre: "Videos educativos", componente: VideosEducativos, descripcion: "Visualiza los vídeos educativos sobre el tema", color: "from-gray-400 to-gray-600", imagen: "/images/videos.webp" },
     { id: 'mapasMentales', nombre: "Mapas Mentales", componente: MapasMentales, descripcion: "Visualiza mapas conceptuales interactivos", color: "from-gray-400 to-gray-600", imagen: "/images/mapamental.webp" },
     { id: 'mentor', nombre: "Mentor Virtual", componente: Mentor, descripcion: "Chatea para resolver tus dudas sobre los contenidos del tema", color: "from-gray-400 to-gray-600", imagen: "/images/mentorvirtual.webp" },
+    { id: 'podcast', nombre: "Podcasts", componente: Podcast, descripcion: "Escucha podcasts relacionados con el tema", color: "from-gray-400 to-gray-600", imagen: "/images/podcast.webp" },
   ],
   recursosAprendizaje: [
     { id: 'quiz', nombre: "Quiz interactivo", componente: QuizInteractivo, descripcion: "Pon a prueba tus conocimientos", color: "from-blue-400 to-blue-600", imagen: "/images/actividad1.webp" },
