@@ -20,6 +20,7 @@ import Mentor from './components/Mentor';
 import Podcast from './components/Podcast';
 import { scrollToTop } from './utils/scrollToTop';
 import { Headphones, GraduationCap, Brain, MessageCircleQuestion, Link, WholeWord, FlipVertical, GitBranch, TextSearch, Map, Video, MessageCircle } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 
 const actividadesIconos = {
   quiz: Brain,
@@ -215,6 +216,7 @@ const App = () => {
       <div className="mt-8">
         {renderContent()}
       </div>
+      <Analytics /> {/* Integración de Vercel Analytics */}
     </div>
   );
 };
