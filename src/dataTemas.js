@@ -99,17 +99,17 @@ export const temasData = {
         {
           id: 'sociologia',
           titulo: '¿Qué es la sociología?',
-          url: 'https://aprendizajeconia.com/sociologiaUNAV/sociologia.html'
+          url: '/mapasmentales/sociologia.html'
         },
         {
           id: 'condicionsociocultural',
           titulo: 'Condición sociocultural del ser humano',
-          url: 'https://aprendizajeconia.com/sociologiaUNAV/condicionsociocultural.html'
+          url: '/mapasmentales/condicionsociocultural.html'
         },
         {
           id: 'perspectivarelacional',
           titulo: 'La perspectiva relacional en la sociología',
-          url: 'https://aprendizajeconia.com/sociologiaUNAV/perspectivarelacional.html'
+          url: '/mapasmentales/perspectivarelacional.html'
         }
       ],
       conceptosClave: [
@@ -1642,12 +1642,12 @@ export const temasData = {
         {
           id: 'cultura',
           titulo: 'Concepto y componentes de la cultura',
-          url: 'https://aprendizajeconia.com/sociologiaUNAV/cultura.html'
+          url: '/mapasmentales/cultura.html'
         },
         {
           id: 'relativismo',
           titulo: 'Diversidad cultural y el reto del relativismo cultural',
-          url: 'https://aprendizajeconia.com/sociologiaUNAV/relativismo.html'
+          url: '/mapasmentales/relativismo.html'
         },
       ],
       conceptosClave: [
@@ -2672,12 +2672,12 @@ export const temasData = {
         {
           id: 'accionsocial',
           titulo: 'Fundamentos de la acción social',
-          url: 'https://aprendizajeconia.com/sociologiaUNAV/accionsocial.html'
+          url: '/mapasmentales/accionsocial.html'
         },
         {
           id: 'instituciones',
           titulo: 'Instituciones sociales y el proceso de institucionalización',
-          url: 'https://aprendizajeconia.com/sociologiaUNAV/instituciones.html'
+          url: '/mapasmentales/instituciones.html'
         },
       ],
       conceptosClave: [
