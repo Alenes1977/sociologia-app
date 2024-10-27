@@ -1,11 +1,11 @@
 {
   "version": 2,
   "builds": [
-    { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "build" } }
-  ],
-  "routes": [
-    { "src": "/service-worker.js", "dest": "/service-worker.js" },
-    { "src": "/(.*)", "dest": "/$1" }
+    { 
+      "src": "package.json", 
+      "use": "@vercel/static-build", 
+      "config": { "distDir": "build" } 
+    }
   ],
   "headers": [
     {
@@ -34,5 +34,9 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    { "source": "/service-worker.js", "destination": "/service-worker.js" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
