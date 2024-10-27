@@ -22,6 +22,8 @@ import { ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Analytics } from '@vercel/analytics/react';
 import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
+import Header from './components/ui/Header';
+import Footer from './components/ui/Footer';
 // Elimina esta línea si no estás usando ScrollToTop
 // import ScrollToTop from './utils/scrollToTop';
 
@@ -39,9 +41,21 @@ const App = () => {
   // Página de inicio
   const Home = () => (
     <>
-      <h1 className="text-5xl font-bold mb-10 text-center text-sociologia-800">Curso de Sociología, UNAV</h1>
-      <h2 className="text-3xl font-bold mb-10 text-center text-sociologia-800">Prof. Alejandro Néstor García Martínez</h2>
-      <p className="mb-12 text-2xl text-center text-sociologia-600">Explora los temas de la asignatura y desafía tu conocimiento de una manera entretenida:</p>
+      <div className="relative mb-12">
+        <div className="h-64 md:h-96 lg:h-80 overflow-hidden rounded-lg shadow-lg relative">
+          <img 
+            src="/images/portada.webp" 
+            alt="Portada del curso de Sociología" 
+            className="absolute w-full h-full object-cover object-center lg:object-top lg:left-1/4"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-sociologia-900 via-sociologia-800 to-transparent opacity-80"></div>
+        </div>
+        <div className="absolute inset-0 flex flex-col justify-center px-8 md:px-16 lg:px-24">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Curso de Sociología, UNAV</h1>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-sociologia-100 drop-shadow-[0_2px_3px_rgba(0,0,0,0.7)]">Prof. Alejandro Néstor García Martínez</h2>
+        </div>
+      </div>
+      <p className="mb-12 text-xl md:text-2xl text-center text-sociologia-600">Explora los temas de la asignatura y desafía tu conocimiento de una manera entretenida</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {temas.map((tema, index) => (
           <TemaCard
@@ -105,9 +119,16 @@ const App = () => {
 
     return (
       <div className="space-y-8">
-        <div className="bg-sociologia-100 p-6 rounded-lg shadow-md">
-          <h1 className="text-4xl font-bold mb-2 text-sociologia-800">{tema.nombre}</h1>
-          <h2 className="text-2xl font-semibold text-sociologia-600">{tema.subtitulo}</h2>
+        <div className="bg-gradient-to-br from-sociologia-800 to-sociologia-600 py-6 px-8 rounded-xl shadow-2xl relative overflow-hidden w-full">
+          <div className="absolute top-0 left-0 w-full h-full bg-white opacity-5 transform -skew-y-12"></div>
+          <div className="max-w-7xl mx-auto">
+            <h1 className="text-4xl font-extrabold mb-2 text-white relative z-10 tracking-tight leading-tight drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+              {tema.nombre}
+            </h1>
+            <h2 className="text-xl font-semibold text-sociologia-100 relative z-10 pl-4 border-l-4 border-sociologia-300 leading-relaxed drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)]">
+              {tema.subtitulo}
+            </h2>
+          </div>
         </div>
         {renderActividadesSection("Contenidos educativos", actividades.contenidosEducativos)}
         {renderActividadesSection("Recursos de aprendizaje", actividades.recursosAprendizaje)}
@@ -173,17 +194,20 @@ const App = () => {
   };
 
   return (
-    <div className="container mx-auto p-8 bg-gradient-to-b from-sociologia-50 to-sociologia-100 min-h-screen">
-      <Breadcrumbs />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/tema/:temaId" element={<TemaDetalle />} />
-        <Route path="/tema/:temaId/:actividadId" element={<Actividad />} />
-        {/* Ruta para manejar páginas no encontradas */}
-        <Route path="*" element={<div className="text-center text-red-500 text-xl">Página no encontrada</div>} />
-      </Routes>
-      <Analytics /> {/* Integración de Vercel Analytics */}
-    </div>
+    <>
+      <Header />
+      <div className="container mx-auto p-8 bg-gradient-to-b from-sociologia-50 to-sociologia-100 min-h-screen">
+        <Breadcrumbs />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/tema/:temaId" element={<TemaDetalle />} />
+          <Route path="/tema/:temaId/:actividadId" element={<Actividad />} />
+          <Route path="*" element={<div className="text-center text-red-500 text-xl">Página no encontrada</div>} />
+        </Routes>
+        <Analytics />
+      </div>
+      <Footer />
+    </>
   );
 };
 
